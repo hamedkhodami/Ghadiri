@@ -124,9 +124,9 @@ USE_TZ = False
 STATIC_URL = '/static/'
 STATIC_ROOT = os.getenv('STATIC_ROOT')
 
-#STATICFILES_DIRS = [
-#    os.getenv('STATICFILES_DIRS', BASE_DIR / 'static/assets/'),
-#]
+STATICFILES_DIRS = [
+    os.getenv('STATICFILES_DIRS', BASE_DIR / 'static/assets/'),
+]
 
 # Media
 MEDIA_URL = '/media/'
