@@ -1,0 +1,1366 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-23 17:41+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\apps\account\admin.py:28 .\apps\account\admin.py:63
+msgid "Personal info"
+msgstr "اطلاعات شخصی"
+
+#: .\apps\account\admin.py:29
+msgid "Verifications"
+msgstr "تاییدیه‌ ها"
+
+#: .\apps\account\admin.py:30
+msgid "Permissions"
+msgstr "مجوزها"
+
+#: .\apps\account\admin.py:31 .\apps\account\models.py:28
+#: .\apps\account\models.py:46
+msgid "Accesses"
+msgstr "دسترسی ها"
+
+#: .\apps\account\admin.py:32
+msgid "Dates"
+msgstr "تاریخ ها"
+
+#: .\apps\account\admin.py:64
+msgid "Place info"
+msgstr "اطلاعات مجموعه"
+
+#: .\apps\account\admin.py:67 .\apps\account\models.py:158
+#: .\apps\course\admin.py:90 .\apps\payment\admin.py:23
+#: .\apps\restaurant\admin.py:15 .\apps\restaurant\admin.py:40
+#: .\apps\subscription\admin.py:43
+msgid "Place name"
+msgstr "نام مجموعه"
+
+#: .\apps\account\apps.py:8
+msgid "Account"
+msgstr "حساب ها"
+
+#: .\apps\account\enums.py:7 .\apps\account\models.py:65
+#: .\apps\account\models.py:153 .\apps\course\models.py:166
+#: .\apps\course\models.py:182 .\apps\customers\models.py:37
+#: .\apps\payment\models.py:14 .\apps\restaurant\admin.py:36
+#: .\apps\restaurant\models.py:14 .\apps\restaurant\models.py:295
+#: .\apps\subscription\models.py:40 .\apps\ticket\models.py:16
+#: .\apps\ticket\models.py:49
+msgid "User"
+msgstr "کاربر"
+
+#: .\apps\account\enums.py:8 .\apps\account\models.py:48
+msgid "Admin"
+msgstr "ادمین"
+
+#: .\apps\account\enums.py:13
+msgid "Male"
+msgstr "مرد"
+
+#: .\apps\account\enums.py:14
+msgid "Female"
+msgstr "زن"
+
+#: .\apps\account\forms.py:17 .\apps\account\models.py:42
+msgid "Phone number"
+msgstr "شماره تلفن"
+
+#: .\apps\account\forms.py:18
+msgid "Password"
+msgstr "گذرواژه"
+
+#: .\apps\account\forms.py:19
+msgid "Password repeat"
+msgstr "تکرار گذرواژه"
+
+#: .\apps\account\forms.py:31 .\apps\account\forms.py:118
+msgid "Enter a valid phone number"
+msgstr "یک شماره تلفن معتبر وارد کنید"
+
+#: .\apps\account\forms.py:41 .\apps\account\forms.py:138
+msgid "Passwords are not match."
+msgstr "گذروازه یکسان نیست."
+
+#: .\apps\account\forms.py:57
+msgid "09__"
+msgstr "09__"
+
+#: .\apps\account\forms.py:86
+#, fuzzy
+#| msgid "Enter a valid value."
+msgid "Enter a valid username"
+msgstr "یک مقدار معتبر وارد کنید."
+
+#: .\apps\account\forms.py:88
+msgid "Username or password is not correct"
+msgstr "نام کاربری یا رمزعبور نادرست است"
+
+#: .\apps\account\forms.py:103 .\apps\account\views.py:86
+#: .\apps\account\views.py:200
+msgid "There is an issue! please try again"
+msgstr "خطایی رخ داده است! لطفا مجدد تلاش کنید"
+
+#: .\apps\account\forms.py:106
+msgid "Entered code is not correct"
+msgstr "کد وارد شده صحیح نیست."
+
+#: .\apps\account\forms.py:122
+msgid "No user found with this phone number"
+msgstr "کاربری با این شماره موبایل یافت نشد"
+
+#: .\apps\account\managers.py:22
+msgid "Entered phone number is not valid"
+msgstr "شماره تلفن وارد شده معتبر نیست"
+
+#: .\apps\account\managers.py:34
+msgid "Users must have a mobile number!"
+msgstr "کاربر باید یک شماره تلفن داشته باشد"
+
+#: .\apps\account\mixinx.py:27
+msgid "You do not have permission to access this page!"
+msgstr "شما اجازه دسترسی به این صفحه را ندارید"
+
+#: .\apps\account\mixinx.py:43
+msgid "You need to complete your profile"
+msgstr "شما باید پروفایل خود را تکمیل کنید"
+
+#: .\apps\account\models.py:20
+msgid "Access title"
+msgstr "عنوان دسترسی"
+
+#: .\apps\account\models.py:22 .\apps\account\models.py:55
+#: .\apps\core\models.py:7 .\apps\ticket\models.py:22
+#: .\apps\ticket\models.py:53
+msgid "Creation time"
+msgstr "زمان ایجاد"
+
+#: .\apps\account\models.py:27
+msgid "Access"
+msgstr "دسترسی"
+
+#: .\apps\account\models.py:43
+msgid "Email address"
+msgstr "آدرس الکترونیک"
+
+#: .\apps\account\models.py:44
+msgid "First name"
+msgstr "نام"
+
+#: .\apps\account\models.py:45
+msgid "Last name"
+msgstr "نام خانوادگی"
+
+#: .\apps\account\models.py:47 .\apps\course\models.py:68
+#: .\apps\course\models.py:129 .\apps\course\models.py:170
+#: .\apps\public\models.py:12 .\apps\public\models.py:34
+#: .\apps\restaurant\models.py:18 .\apps\restaurant\models.py:45
+#: .\apps\restaurant\models.py:189 .\apps\subscription\models.py:21
+#: .\apps\subscription\models.py:42 .\apps\ticket\models.py:20
+msgid "Active"
+msgstr "فعال"
+
+#: .\apps\account\models.py:49
+msgid "Verify"
+msgstr "تایید شده"
+
+#: .\apps\account\models.py:50
+msgid "Is used free subs"
+msgstr "از اشتراک رایگان استفاده شده است ؟"
+
+#: .\apps\account\models.py:53
+msgid "Secret token"
+msgstr "توکن"
+
+#: .\apps\account\models.py:56 .\apps\core\models.py:8
+#: .\apps\ticket\models.py:23 .\apps\ticket\models.py:54
+msgid "Update time"
+msgstr "زمان ویرایش"
+
+#: .\apps\account\models.py:66
+msgid "Users"
+msgstr "کاربران"
+
+#: .\apps\account\models.py:105 .\apps\course\models.py:17
+msgid "No name"
+msgstr "بدون نام"
+
+#: .\apps\account\models.py:154
+msgid "Melli code"
+msgstr "کدملی"
+
+#: .\apps\account\models.py:156
+msgid "Gender"
+msgstr "جنسیت"
+
+#: .\apps\account\models.py:157
+msgid "Date of birth"
+msgstr "تاریخ تولد"
+
+#: .\apps\account\models.py:159
+msgid "Province"
+msgstr "استان"
+
+#: .\apps\account\models.py:160
+msgid "City"
+msgstr "شهر"
+
+#: .\apps\account\models.py:161
+msgid "Picture"
+msgstr "تصویر"
+
+#: .\apps\account\models.py:164
+msgid "User profile"
+msgstr "پروفایل کاربر"
+
+#: .\apps\account\models.py:165
+msgid "Users profile"
+msgstr "پروفایل کاربران"
+
+#: .\apps\account\validators.py:7
+msgid "Entered value must be number"
+msgstr "مقدار وارد شده باید عدد باشد"
+
+#: .\apps\account\views.py:44
+msgid "Login successful"
+msgstr "ورود موفق"
+
+#: .\apps\account\views.py:64
+#, fuzzy
+#| msgid "Your rate has been successfully registered"
+msgid "A new user has been registered"
+msgstr "نظر شما با موفقیت ثبت گردید"
+
+#: .\apps\account\views.py:91
+msgid "Phone number verification code"
+msgstr "کد تایید شماره موبایل"
+
+#: .\apps\account\views.py:97
+msgid "Code sent to you"
+msgstr "کد تایید برای شما ارسال شد"
+
+#: .\apps\account\views.py:129
+msgid "Register done successful"
+msgstr "ثبت نام با موفقیت انجام شد"
+
+#: .\apps\account\views.py:208
+msgid "Password successfully reset"
+msgstr "گذرواژه با موفقیت تغییر کرد"
+
+#: .\apps\account\views.py:225
+msgid "Profile updated successfully"
+msgstr "پروفایل با موفقیت بروزرسانی شد"
+
+#: .\apps\account\views.py:236
+msgid "Password is not correct"
+msgstr "رمزعبور صحیح نمی‌باشد"
+
+#: .\apps\account\views.py:243
+msgid "Password changed successfully"
+msgstr "گذرواژه با موفقیت تغییر کرد"
+
+#: .\apps\core\tasks.py:17 .\apps\notification\enums.py:8
+msgid "Subscription end warning"
+msgstr "هشدار پایان اشتراک"
+
+#: .\apps\core\utils.py:59
+#, python-format
+msgid "%(minutes)s minutes ago."
+msgstr "%(minutes)s دقیقه قبل"
+
+#: .\apps\core\utils.py:61
+#, python-format
+msgid "%(hours)s hours ago."
+msgstr "%(hours)s ساعت قبل"
+
+#: .\apps\core\utils.py:63
+#, python-format
+msgid "%(days)s days ago."
+msgstr "%(days)s روز قبل"
+
+#: .\apps\core\utils.py:65
+msgid "Moments ago"
+msgstr "لحظاتی قبل"
+
+#: .\apps\core\utils.py:78 .\apps\core\utils.py:92
+msgid "Entered data is not correct."
+msgstr "داده وارد شده صحیح نیست."
+
+#: .\apps\course\admin.py:21
+msgid "Media links"
+msgstr "آدرس‌ رسانه‌ها"
+
+#: .\apps\course\admin.py:70 .\apps\subscription\admin.py:19
+msgid "Price info"
+msgstr "اطلاعات قیمت"
+
+#: .\apps\course\admin.py:71
+msgid "Additional info"
+msgstr "اطلاعات تکمیلی"
+
+#: .\apps\course\admin.py:77 .\apps\subscription\admin.py:25
+msgid "Selling price(Rial)"
+msgstr "قیمت فروش (ریال)"
+
+#: .\apps\course\apps.py:8 .\apps\course\models.py:71
+#: .\apps\course\models.py:106 .\apps\course\models.py:122
+#: .\apps\course\models.py:151 .\apps\course\models.py:165
+#: .\apps\course\models.py:183
+msgid "Course"
+msgstr "دوره"
+
+#: .\apps\course\enums.py:7
+msgid "Free"
+msgstr "رایگان"
+
+#: .\apps\course\enums.py:8
+msgid "Cash"
+msgstr "نقدی"
+
+#: .\apps\course\enums.py:13
+msgid "In person"
+msgstr "حضوری"
+
+#: .\apps\course\enums.py:14
+msgid "Online"
+msgstr "سمینار"
+
+#: .\apps\course\enums.py:15
+msgid "Offline"
+msgstr "غیر حضوری"
+
+#: .\apps\course\models.py:17
+msgid "Instructor name"
+msgstr "نام مدرس"
+
+#: .\apps\course\models.py:18
+msgid "Biography"
+msgstr "معرفی کوتاه"
+
+#: .\apps\course\models.py:19
+msgid "Profile pic"
+msgstr "تصویر پروفایل"
+
+#: .\apps\course\models.py:22
+msgid "Linkedin url"
+msgstr "آدرس لینکدین"
+
+#: .\apps\course\models.py:23
+msgid "Instagram url"
+msgstr "آدرس اینستاگرام"
+
+#: .\apps\course\models.py:24
+msgid "X/Twitter url"
+msgstr "آدرس توییتر/x"
+
+#: .\apps\course\models.py:25
+msgid "Website url"
+msgstr "آدرس وبسایت"
+
+#: .\apps\course\models.py:28 .\apps\course\models.py:55
+msgid "Instructor"
+msgstr "مدرس"
+
+#: .\apps\course\models.py:29
+msgid "Instructors"
+msgstr "مدرسین"
+
+#: .\apps\course\models.py:50 .\apps\public\models.py:9
+#: .\apps\public\models.py:29 .\apps\restaurant\models.py:16
+#: .\apps\restaurant\models.py:44 .\apps\restaurant\models.py:64
+#: .\apps\restaurant\models.py:135 .\apps\restaurant\models.py:152
+#: .\apps\restaurant\models.py:172 .\apps\ticket\models.py:17
+msgid "Title"
+msgstr "عنوان"
+
+#: .\apps\course\models.py:50 .\apps\course\models.py:107
+#: .\apps\course\models.py:124 .\apps\public\models.py:29
+#: .\apps\restaurant\models.py:16 .\apps\restaurant\models.py:135
+#: .\apps\restaurant\models.py:152 .\apps\restaurant\models.py:172
+#: .\apps\ticket\models.py:17
+msgid "No title"
+msgstr "بدون عنوان"
+
+#: .\apps\course\models.py:51
+msgid "Slug"
+msgstr ""
+
+#: .\apps\course\models.py:52
+msgid "Short description"
+msgstr "توضیح کوتاه"
+
+#: .\apps\course\models.py:53 .\apps\public\models.py:30
+#: .\apps\restaurant\models.py:383 .\apps\restaurant\models.py:394
+msgid "Description"
+msgstr "توضیحات"
+
+#: .\apps\course\models.py:54
+msgid "Course type"
+msgstr "نوع دوره"
+
+#: .\apps\course\models.py:56 .\apps\course\models.py:128
+msgid "Duration"
+msgstr "مدت زمان"
+
+#: .\apps\course\models.py:56
+msgid "2h, 30m"
+msgstr "۲ ساعت و ۳۰ دقیقه"
+
+#: .\apps\course\models.py:57
+msgid "Payment type"
+msgstr "نوع پرداخت"
+
+#: .\apps\course\models.py:58 .\apps\restaurant\models.py:65
+#: .\apps\restaurant\models.py:384 .\apps\restaurant\models.py:395
+#: .\apps\subscription\models.py:17
+msgid "Price"
+msgstr "قیمت"
+
+#: .\apps\course\models.py:59 .\apps\subscription\models.py:18
+msgid "Discount"
+msgstr "تخفیف"
+
+#: .\apps\course\models.py:60 .\apps\subscription\models.py:19
+msgid "Selling price"
+msgstr "قیمت فروش"
+
+#: .\apps\course\models.py:62 .\apps\course\models.py:63
+msgid "Introduction video"
+msgstr "ویدیو معرفی"
+
+#: .\apps\course\models.py:64
+msgid "Introduction image"
+msgstr "تصویر معرفی"
+
+#: .\apps\course\models.py:65 .\apps\public\models.py:11
+#: .\apps\restaurant\models.py:187
+msgid "Image"
+msgstr "تصویر کاور"
+
+#: .\apps\course\models.py:67
+msgid "Pinned"
+msgstr "پین شده"
+
+#: .\apps\course\models.py:72
+msgid "Courses"
+msgstr "دوره ها"
+
+#: .\apps\course\models.py:107
+msgid "Session title"
+msgstr "عنوان جلسه"
+
+#: .\apps\course\models.py:110
+msgid "Course session"
+msgstr "جلسه دوره"
+
+#: .\apps\course\models.py:111
+msgid "Course sessions"
+msgstr "جلسات دوره"
+
+#: .\apps\course\models.py:123
+msgid "Session"
+msgstr "جلسه"
+
+#: .\apps\course\models.py:124
+msgid "Episode title"
+msgstr "عنوان قسمت"
+
+#: .\apps\course\models.py:125
+msgid "Episode number"
+msgstr "شماره قسمت"
+
+#: .\apps\course\models.py:126
+msgid "Video file"
+msgstr "فایل ویدیو"
+
+#: .\apps\course\models.py:127
+msgid "File url"
+msgstr "لینک فایل"
+
+#: .\apps\course\models.py:128
+msgid "Minutes"
+msgstr "دقیقه"
+
+#: .\apps\course\models.py:132
+msgid "Episode"
+msgstr "قسمت"
+
+#: .\apps\course\models.py:133
+msgid "Episodes"
+msgstr "قسمت ها"
+
+#: .\apps\course\models.py:152
+msgid "Question title"
+msgstr "عنوان سوًال"
+
+#: .\apps\course\models.py:153
+msgid "Answer"
+msgstr "پاسخ"
+
+#: .\apps\course\models.py:156
+msgid "Frequently asked question"
+msgstr "سوال متداول"
+
+#: .\apps\course\models.py:157
+msgid "Frequently asked questions"
+msgstr "سوالات متداول"
+
+#: .\apps\course\models.py:169
+msgid "Verified"
+msgstr "تایید شده"
+
+#: .\apps\course\models.py:173
+msgid "Course comment"
+msgstr "کامنت"
+
+#: .\apps\course\models.py:174
+msgid "Course comments"
+msgstr "کامنت‌های دوره"
+
+#: .\apps\course\models.py:184
+msgid "Is finished"
+msgstr "تمام شده"
+
+#: .\apps\course\models.py:187
+msgid "User course"
+msgstr "دوره‌ کاربر"
+
+#: .\apps\course\models.py:188
+msgid "User courses"
+msgstr "دوره‌های کاربران"
+
+#: .\apps\customers\apps.py:8
+msgid "Customers"
+msgstr "مشتریان"
+
+#: .\apps\customers\enums.py:6
+msgid "Catering"
+msgstr "کترینگ"
+
+#: .\apps\customers\enums.py:7
+msgid "Iranian restaurant"
+msgstr "رستوران ایرانی"
+
+#: .\apps\customers\enums.py:8
+msgid "Non Iranian restaurant"
+msgstr "رستوران غیر ایرانی"
+
+#: .\apps\customers\enums.py:9
+msgid "Coffee Shop"
+msgstr "کافی شاپ"
+
+#: .\apps\customers\enums.py:10
+msgid "Cafe Restaurant"
+msgstr "کافه رستوران"
+
+#: .\apps\customers\enums.py:11
+msgid "Other"
+msgstr "سایر"
+
+#: .\apps\customers\enums.py:15
+msgid "Morning"
+msgstr "صبح"
+
+msgid "morning"
+msgstr "صبح"
+
+#: .\apps\customers\enums.py:16
+msgid "Noon"
+msgstr "ظهر"
+
+msgid "noon"
+msgstr "ظهر"
+
+#: .\apps\customers\enums.py:17
+msgid "Night"
+msgstr "شب"
+
+msgid "night"
+msgstr "شب"
+
+#: .\apps\customers\enums.py:21
+msgid "Yes"
+msgstr "بله"
+
+#: .\apps\customers\enums.py:22
+msgid "No"
+msgstr "نه"
+
+#: .\apps\customers\models.py:12 .\apps\restaurant\apps.py:8
+#: .\apps\restaurant\models.py:21 .\apps\restaurant\models.py:43
+#: .\apps\restaurant\models.py:134 .\apps\restaurant\models.py:151
+msgid "Restaurant"
+msgstr "رستوران"
+
+#: .\apps\customers\models.py:13
+msgid "Customer phone number"
+msgstr "شماره تلفن مشتری"
+
+#: .\apps\customers\models.py:14
+msgid "Customer name"
+msgstr "نام مشتری"
+
+#: .\apps\customers\models.py:15
+msgid "Customer comment"
+msgstr "کامنت مشتری"
+
+#: .\apps\customers\models.py:17
+msgid "Answer of question 1"
+msgstr "پاسخ سوال ۱"
+
+#: .\apps\customers\models.py:18
+msgid "Answer of question 2"
+msgstr "پاسخ سوال ۲"
+
+#: .\apps\customers\models.py:21
+msgid "Customer survey"
+msgstr "نظرسنجی مشتری"
+
+#: .\apps\customers\models.py:22
+msgid "Customers surveys"
+msgstr "نظرسنجی‌های مشتریان"
+
+#: .\apps\customers\models.py:38
+msgid "Field of Activity"
+msgstr "حوضه فعالیت"
+
+#: .\apps\customers\models.py:39
+msgid "Work Experience"
+msgstr "سوابق کاری"
+
+#: .\apps\customers\models.py:40
+msgid "Work Shift"
+msgstr "شیفت های کاری"
+
+#: .\apps\customers\models.py:41
+#, fuzzy
+#| msgid "Number of raw use"
+msgid "Number of staff"
+msgstr "تعداد مورد استفاده خام"
+
+#: .\apps\customers\models.py:42
+msgid "Capacity"
+msgstr "ظرفیت"
+
+#: .\apps\customers\models.py:43
+msgid "Personnel Training Detail"
+msgstr "اموزش های پرسنل"
+
+#: .\apps\customers\models.py:44
+msgid "Business Concerns Detail"
+msgstr "نگرانی های در کسب و کار"
+
+#: .\apps\customers\models.py:45
+msgid "Accounting Software"
+msgstr "نرم افزار حسابداری"
+
+#: .\apps\customers\models.py:47
+msgid "Conduct Inventory Reconciliation"
+msgstr "هر چند مدت یکبار انبار گردانی انجام میشود"
+
+#: .\apps\customers\models.py:50
+msgid "Has Control Cost System"
+msgstr "سیستم کنترل هزینه دارید"
+
+#: .\apps\customers\models.py:53
+msgid "Has Book of Regulations"
+msgstr "کتاب راهنما و مقررات دارید"
+
+#: .\apps\customers\models.py:56
+msgid "Has Tasks Written"
+msgstr "وظایف نوشته شده اند"
+
+#: .\apps\customers\models.py:59
+msgid "Has Recipes Written"
+msgstr "رسپی ها نوشته شده اند"
+
+#: .\apps\customers\models.py:62
+msgid "Has Instructions Written"
+msgstr "دستور عمل ها نوشته شده اند"
+
+#: .\apps\customers\models.py:65
+msgid "Counseling"
+msgstr "مشاوره"
+
+#: .\apps\customers\models.py:66
+msgid "Counselings"
+msgstr "مشاوره ها"
+
+#: .\apps\customers\views.py:71
+msgid "Your rate has been successfully registered"
+msgstr "نظر شما با موفقیت ثبت گردید"
+
+#: .\apps\customers\views.py:107 .\apps\customers\views.py:113
+#: .\apps\restaurant\views\profile.py:31 .\apps\restaurant\views\profile.py:49
+#: .\apps\restaurant\views\profile.py:66 .\apps\restaurant\views\profile.py:96
+#: .\apps\restaurant\views\profile.py:113
+#: .\apps\restaurant\views\profile.py:155
+#: .\apps\restaurant\views\profile.py:172
+msgid "Please enter fields correctly"
+msgstr "لطفا فیلد هارا به درستی پر نمایید"
+
+#: .\apps\customers\views.py:119 .\apps\notification\enums.py:9
+msgid "New counseling form submited"
+msgstr "مشاوره جدیدی ثبت شده است"
+
+#: .\apps\customers\views.py:121
+msgid "Your counseling form has been successfully submited"
+msgstr "فرم مشاوره شما با موفقیت ثبت شد"
+
+#: .\apps\notification\apps.py:8 .\apps\notification\models.py:29
+msgid "Notification"
+msgstr "اعلان"
+
+#: .\apps\notification\enums.py:7
+msgid "Mobile verification code"
+msgstr "کد تاییدیه موبایل"
+
+#: .\apps\notification\models.py:15
+msgid "Notif type"
+msgstr "نوع اعلان"
+
+#: .\apps\notification\models.py:16
+msgid "Notif title"
+msgstr "عنوان اعلان"
+
+#: .\apps\notification\models.py:17
+msgid "Notif description"
+msgstr "توضیح اعلان"
+
+#: .\apps\notification\models.py:21
+msgid "KeyWord args"
+msgstr "آرگومان‌‌های کلیدی"
+
+#: .\apps\notification\models.py:23
+msgid "Send Notify"
+msgstr "ارسال اعلان"
+
+#: .\apps\notification\models.py:24
+msgid "To user"
+msgstr "به کاربر"
+
+#: .\apps\notification\models.py:26
+msgid "Is showing"
+msgstr "نمایش دادن"
+
+#: .\apps\notification\models.py:30
+msgid "Notifications"
+msgstr "اعلان ها"
+
+#: .\apps\payment\apps.py:8
+msgid "Payment"
+msgstr "پرداخت"
+
+#: .\apps\payment\models.py:13
+msgid "Order ID"
+msgstr "شناسه سفارش"
+
+#: .\apps\payment\models.py:15
+msgid "Payable price"
+msgstr "قیمت قابل پرداخت"
+
+#: .\apps\payment\models.py:16
+msgid "Discount price"
+msgstr "قیمت تخفیف"
+
+#: .\apps\payment\models.py:17
+msgid "Bank tracking code"
+msgstr "کد رهگیری پرداخت"
+
+#: .\apps\payment\models.py:19
+msgid "Callback url"
+msgstr "آدرس بازگشت"
+
+#: .\apps\payment\models.py:22 .\apps\payment\models.py:35
+msgid "Order"
+msgstr "سفارش"
+
+#: .\apps\payment\models.py:23
+msgid "Orders"
+msgstr "سفارشات"
+
+#: .\apps\payment\models.py:42
+msgid "Order item"
+msgstr "آیتم سفارش"
+
+#: .\apps\payment\models.py:43
+msgid "Order items"
+msgstr "آیتم‌های سفارش"
+
+#: .\apps\payment\views.py:22 .\apps\payment\views.py:42
+msgid "There was a problem connecting to the bank gateway. Please try again"
+msgstr "مشکلی در اتصال به درگاه بانک رخ داد. لطفا دوباره تلاش کنید"
+
+#: .\apps\public\apps.py:8
+msgid "Public"
+msgstr "عمومی"
+
+#: .\apps\public\models.py:10
+msgid "Related link"
+msgstr "لینک مرتبط"
+
+#: .\apps\public\models.py:15
+msgid "Banner"
+msgstr "بنر"
+
+#: .\apps\public\models.py:16
+msgid "Banners"
+msgstr "بنرهای صفحه اصلی"
+
+#: .\apps\public\models.py:31
+msgid "Video cover"
+msgstr "کاور ویدیو"
+
+#: .\apps\public\models.py:32
+msgid "Video"
+msgstr "فایل ویدیو"
+
+#: .\apps\public\models.py:33
+msgid "Video url"
+msgstr "لینک ویدیو"
+
+#: .\apps\public\models.py:37
+msgid "Index video"
+msgstr "ویدیو صفحه اصلی"
+
+#: .\apps\public\models.py:38
+msgid "Index Videos"
+msgstr "ویدیوهای صفحه اصلی"
+
+#: .\apps\restaurant\admin.py:46
+msgid "Common info"
+msgstr "اطلاعات عمومی"
+
+#: .\apps\restaurant\admin.py:47
+msgid "Weight loss during cleaning"
+msgstr "وزن کاهش یافته در اثر تمیز کردن"
+
+#: .\apps\restaurant\admin.py:48
+msgid "Weight loss during baking"
+msgstr "کاهش وزن در خلال پخت"
+
+#: .\apps\restaurant\admin.py:49
+msgid "Computational ratios of yield"
+msgstr "نسبت های محاسباتی تست بازده"
+
+#: .\apps\restaurant\forms.py:22
+msgid "This category is already exists"
+msgstr "این دسته بندی وجود دارد"
+
+#: .\apps\restaurant\models.py:15
+msgid "Code"
+msgstr "کد"
+
+#: .\apps\restaurant\models.py:17
+msgid "Services fee"
+msgstr "هزینه خدمات"
+
+#: .\apps\restaurant\models.py:22
+msgid "Restaurants"
+msgstr "رستوران ها"
+
+#: .\apps\restaurant\models.py:44
+msgid "Test category"
+msgstr "دسته تست"
+
+#: .\apps\restaurant\models.py:48
+msgid "Raw materials category"
+msgstr "دسته بندی مواد اولیه"
+
+#: .\apps\restaurant\models.py:49
+msgid "Raw materials categories"
+msgstr "دسته بندی‌های مواد اولیه"
+
+#: .\apps\restaurant\models.py:61 .\apps\restaurant\models.py:168
+msgid "Category"
+msgstr "دسته"
+
+#: .\apps\restaurant\models.py:65
+msgid "Per unit"
+msgstr "به ازای هر واحد"
+
+#: .\apps\restaurant\models.py:66
+msgid "Use for"
+msgstr "استفاده برای"
+
+#: .\apps\restaurant\models.py:67
+msgid "Standard quantity per raw press"
+msgstr "مقدار استاندارد در هر پرس خام"
+
+#: .\apps\restaurant\models.py:69
+msgid "Standard quantity per baked press"
+msgstr "مقدار استاندارد در هر پرس پخته"
+
+#: .\apps\restaurant\models.py:71
+msgid "Delivery weight"
+msgstr "وزن تحویلی"
+
+#: .\apps\restaurant\models.py:74
+msgid "Weight loss due to cleaning(usable)"
+msgstr "وزن کاهش یافته در اثر تمیز کردن (قابل استفاده)"
+
+#: .\apps\restaurant\models.py:76
+msgid "Weight loss due to cleaning(unusable)"
+msgstr "وزن کاهش یافته در اثر تمیز کردن (غیرقابل استفاده)"
+
+#: .\apps\restaurant\models.py:78
+msgid "Edible cleaned weight"
+msgstr "وزن تمیز شده (قابل خوراک)"
+
+#: .\apps\restaurant\models.py:81
+msgid "Weight loss due to baking"
+msgstr "کاهش وزن در خلال پخت"
+
+#: .\apps\restaurant\models.py:82
+msgid "Salable weight(usable)"
+msgstr "وزن قابل فروش (قابل استفاده)"
+
+#: .\apps\restaurant\models.py:85
+msgid "Cost of raw usable quantity"
+msgstr "هزینه مقدار قابل استفاده خام"
+
+#: .\apps\restaurant\models.py:86
+msgid "Cost of baked usable quantity"
+msgstr "هزینه مقدار قابل استفاده پخته شده"
+
+#: .\apps\restaurant\models.py:87
+msgid "Cost of raw usable quantity per press"
+msgstr "هزینه مقدار قابل استفاده خام در هر پرس"
+
+#: .\apps\restaurant\models.py:89
+msgid "Cost of baked usable quantity per press"
+msgstr "هزینه مقدار قابل استفاده پخته شده در هر پرس"
+
+#: .\apps\restaurant\models.py:91
+msgid "Number of raw use"
+msgstr "تعداد مورد استفاده خام"
+
+#: .\apps\restaurant\models.py:92
+msgid "Number of baked use"
+msgstr "تعداد مورد استفاده پخته"
+
+#: .\apps\restaurant\models.py:95 .\apps\restaurant\models.py:255
+msgid "Raw material"
+msgstr "ماده اولیه"
+
+#: .\apps\restaurant\models.py:96
+msgid "Raw materials"
+msgstr "مواد اولیه"
+
+#: .\apps\restaurant\models.py:138
+msgid "Food recipes category"
+msgstr "دسته رسپی غذا"
+
+#: .\apps\restaurant\models.py:139
+msgid "Food recipes categories"
+msgstr "دسته بندی‌های رسپی غذا"
+
+#: .\apps\restaurant\models.py:155
+msgid "Prepared material category"
+msgstr "دسته بندی آماده سازی‌‌ها"
+
+#: .\apps\restaurant\models.py:156
+msgid "Prepared material categories"
+msgstr "دسته بندی‌های آماده سازی‌ها"
+
+#: .\apps\restaurant\models.py:170
+msgid "Prepared category"
+msgstr "دسته ماده آماده شده"
+
+#: .\apps\restaurant\models.py:173
+msgid "How to prepare"
+msgstr "طرز تهیه"
+
+#: .\apps\restaurant\models.py:175 .\apps\restaurant\models.py:259
+msgid "Final price"
+msgstr "قیمت نهایی"
+
+#: .\apps\restaurant\models.py:176
+msgid "Factor coefficient"
+msgstr "ضریب عامل"
+
+#: .\apps\restaurant\models.py:177
+msgid "Services price"
+msgstr "هزینه خدمات"
+
+#: .\apps\restaurant\models.py:178
+msgid "Final price with factor"
+msgstr "قیمت نهایی با ضریب"
+
+#: .\apps\restaurant\models.py:179
+msgid "Menu price"
+msgstr "قیمت درج در منو"
+
+#: .\apps\restaurant\models.py:180
+msgid "Item profit"
+msgstr "سود آیتم"
+
+#: .\apps\restaurant\models.py:181 .\apps\restaurant\models.py:298
+msgid "Food cost"
+msgstr "فود کاست"
+
+#: .\apps\restaurant\models.py:182
+msgid "Number sold"
+msgstr "تعداد فروخته شده"
+
+#: .\apps\restaurant\models.py:183
+msgid "Total sales"
+msgstr "مجموع فروخته شده"
+
+#: .\apps\restaurant\models.py:184
+msgid "Total cost"
+msgstr "مجموع هزینه‌ها"
+
+#: .\apps\restaurant\models.py:185
+msgid "Total profit"
+msgstr "مجموع سود"
+
+#: .\apps\restaurant\models.py:188
+msgid "Is material"
+msgstr "ماده است"
+
+#: .\apps\restaurant\models.py:192
+msgid "Food recipe"
+msgstr "رسپی غذا"
+
+#: .\apps\restaurant\models.py:193
+msgid "Food recipes"
+msgstr "رسپی‌های غذاها"
+
+#: .\apps\restaurant\models.py:253
+msgid "Recipe"
+msgstr "رسپی"
+
+#: .\apps\restaurant\models.py:257
+msgid "Prepared material"
+msgstr "ماده آماده شده"
+
+#: .\apps\restaurant\models.py:258
+msgid "Amount"
+msgstr "مقدار"
+
+#: .\apps\restaurant\models.py:262
+msgid "Recipe material"
+msgstr "ماده رسپی"
+
+#: .\apps\restaurant\models.py:263
+msgid "Recipe materials"
+msgstr "مواد رسپی"
+
+#: .\apps\restaurant\models.py:296
+msgid "Initial investment"
+msgstr "سرمایه اولیه"
+
+#: .\apps\restaurant\models.py:297
+#, fuzzy
+#| msgid "Raw materials"
+msgid "Cost raw materials"
+msgstr "مواد اولیه"
+
+#: .\apps\restaurant\models.py:299
+msgid "Tax"
+msgstr "مالیات"
+
+#: .\apps\restaurant\models.py:302 .\apps\restaurant\models.py:381
+#: .\apps\restaurant\models.py:392 .\apps\restaurant\models.py:403
+#, fuzzy
+#| msgid "Restaurant"
+msgid "Restaurant profile"
+msgstr "رستوران"
+
+#: .\apps\restaurant\models.py:303
+#, fuzzy
+#| msgid "Restaurants"
+msgid "Restaurant profiles"
+msgstr "رستوران ها"
+
+#: .\apps\restaurant\models.py:382 .\apps\restaurant\models.py:393
+msgid "Name"
+msgstr "نام"
+
+#: .\apps\restaurant\views\materials.py:80
+#: .\apps\restaurant\views\preparations.py:82
+#: .\apps\restaurant\views\recipes.py:89
+msgid "Category successfully deleted"
+msgstr "دسته بندی با موفقیت حذف گردید"
+
+#: .\apps\restaurant\views\materials.py:83
+#: .\apps\restaurant\views\materials.py:117
+#: .\apps\restaurant\views\materials.py:146
+#: .\apps\restaurant\views\preparations.py:85
+#: .\apps\restaurant\views\preparations.py:100
+#: .\apps\restaurant\views\preparations.py:188
+#: .\apps\restaurant\views\recipes.py:92 .\apps\restaurant\views\recipes.py:106
+#: .\apps\restaurant\views\recipes.py:198
+msgid "There is an issue. please try again"
+msgstr "خطایی رخ داده است! لطفا مجدد تلاش کنید"
+
+#: .\apps\restaurant\views\materials.py:114
+msgid "Raw materials added successfully"
+msgstr "مواد اولیه افزوده شدند"
+
+#: .\apps\restaurant\views\materials.py:142
+msgid "Item successfully modified"
+msgstr "آیتم با موفقیت تغییر کرد"
+
+#: .\apps\restaurant\views\materials.py:160
+msgid "Item deleted successfully"
+msgstr "آیتم با موفقیت حذف شد"
+
+#: .\apps\restaurant\views\materials.py:188
+msgid "Items saved successfully. You can see results down below"
+msgstr "موارد با موفقیت ثبت شد. اکنون می‌توانید نتایج را در زیر مشاهده فرمایید"
+
+#: .\apps\restaurant\views\menu.py:81
+msgid "Services fee updated"
+msgstr "هزینه خدمات بروزرسانی شد"
+
+#: .\apps\restaurant\views\menu.py:100
+msgid "Item updated successfully"
+msgstr "آیتم با موفقیت بروزرسانی شد"
+
+#: .\apps\restaurant\views\preparations.py:61
+#: .\apps\restaurant\views\recipes.py:68
+msgid "Category successfully added"
+msgstr "دسته بندی با موفقیت اضافه شد"
+
+#: .\apps\restaurant\views\preparations.py:105
+msgid "Item successfully added"
+msgstr "آیتم با موفقیت افزوده شد"
+
+#: .\apps\restaurant\views\preparations.py:118
+#: .\apps\restaurant\views\preparations.py:218
+#: .\apps\restaurant\views\recipes.py:229
+msgid "Item successfully deleted"
+msgstr "آیتم با موفقیت حذف گردید"
+
+#: .\apps\restaurant\views\preparations.py:160
+#: .\apps\restaurant\views\recipes.py:167
+msgid "Changes committed successfully"
+msgstr "تغییرات با موفقیت ثبت شد"
+
+#: .\apps\restaurant\views\preparations.py:185
+#: .\apps\restaurant\views\recipes.py:195
+msgid "Materials added successfully"
+msgstr "مواد با موفقیت افزوده شدند"
+
+#: .\apps\restaurant\views\preparations.py:200
+#: .\apps\restaurant\views\recipes.py:211
+msgid "Please enter field correctly"
+msgstr "لطفا فیلد هارا به درستی پر نمایید"
+
+#: .\apps\restaurant\views\preparations.py:203
+#: .\apps\restaurant\views\recipes.py:214
+#, fuzzy
+#| msgid "Materials added successfully"
+msgid "Material updated successfully"
+msgstr "مواد با موفقیت افزوده شدند"
+
+#: .\apps\restaurant\views\profile.py:34 .\apps\restaurant\views\profile.py:52
+#: .\apps\restaurant\views\profile.py:69 .\apps\restaurant\views\profile.py:81
+#: .\apps\restaurant\views\profile.py:99 .\apps\restaurant\views\profile.py:116
+#: .\apps\restaurant\views\profile.py:128
+#: .\apps\restaurant\views\profile.py:158
+#: .\apps\restaurant\views\profile.py:175
+#: .\apps\restaurant\views\profile.py:187
+#, fuzzy
+#| msgid "Changes committed successfully"
+msgid "Operation completed successfully"
+msgstr "تغییرات با موفقیت ثبت شد"
+
+#: .\apps\restaurant\views\recipes.py:111
+msgid "Recipe successfully added"
+msgstr "رسپی با موفقیت اضافه شد"
+
+#: .\apps\restaurant\views\recipes.py:124
+msgid "Recipe successfully deleted"
+msgstr "رسپی با موفقیت حذف گردید"
+
+#: .\apps\subscription\admin.py:20
+msgid "Status info"
+msgstr "اطلاعات وضعیت"
+
+#: .\apps\subscription\admin.py:39 .\apps\subscription\models.py:41
+msgid "Expire date"
+msgstr "تاریخ انقضا"
+
+#: .\apps\subscription\apps.py:8 .\apps\subscription\models.py:24
+msgid "Subscription"
+msgstr "اشتراک"
+
+#: .\apps\subscription\enums.py:7
+msgid "One week"
+msgstr "یک هفته"
+
+#: .\apps\subscription\enums.py:8
+msgid "One month"
+msgstr "یک ماه"
+
+#: .\apps\subscription\enums.py:9
+msgid "Two months"
+msgstr "دو ماه"
+
+#: .\apps\subscription\enums.py:10
+msgid "Three months"
+msgstr "سه ماه"
+
+#: .\apps\subscription\enums.py:11
+msgid "Six months"
+msgstr "شش ماه"
+
+#: .\apps\subscription\enums.py:12
+msgid "Twelve months"
+msgstr "دوازده ماه"
+
+#: .\apps\subscription\mixinx.py:16
+msgid "You need to purchase subscription to use this service."
+msgstr "شما برای استفاده از این بخش نیازمند تهیه اشتراک هستید."
+
+#: .\apps\subscription\models.py:16
+msgid "Subscription type"
+msgstr "نوع اشتراک"
+
+#: .\apps\subscription\models.py:20
+msgid "Promo"
+msgstr "ویژه"
+
+#: .\apps\subscription\models.py:25
+msgid "Subscriptions"
+msgstr "اشتراک ها"
+
+#: .\apps\subscription\models.py:45
+msgid "Subscriber"
+msgstr "مشترک"
+
+#: .\apps\subscription\models.py:46
+msgid "Subscribers"
+msgstr "مشترکین"
+
+#: .\apps\subscription\views.py:34
+msgid "You cannot active more than 300 days!"
+msgstr "شما نمی‌توانید بیش از ۳۰۰ روز اشتراک فعال داشته باشد!"
+
+#: .\apps\subscription\views.py:96 .\apps\subscription\views.py:126
+#, fuzzy
+#| msgid "Subscription type"
+msgid "New Subscription Registered"
+msgstr "اشتراک جدیدی ثبت شده است"
+
+#: .\apps\subscription\views.py:109
+msgid "You have once used the free subscription."
+msgstr "شما یکبار از اشتراک رایگان استفاده کرده اید"
+
+#: .\apps\ticket\apps.py:8 .\apps\ticket\models.py:26
+#: .\apps\ticket\models.py:48
+msgid "Ticket"
+msgstr "تیکت"
+
+#: .\apps\ticket\enums.py:7
+msgid "General problem"
+msgstr "مشکل عمومی/پیشنهاد"
+
+#: .\apps\ticket\enums.py:8
+msgid "Technical problem"
+msgstr "مشکل فنی"
+
+#: .\apps\ticket\enums.py:13
+msgid "Open"
+msgstr "باز"
+
+#: .\apps\ticket\enums.py:14
+msgid "Closed"
+msgstr "بسته شده"
+
+#: .\apps\ticket\models.py:18
+msgid "Type"
+msgstr "نوع"
+
+#: .\apps\ticket\models.py:19
+msgid "Status"
+msgstr "وضعیت"
+
+#: .\apps\ticket\models.py:27
+msgid "Tickets"
+msgstr "تیکت‌ها"
+
+#: .\apps\ticket\models.py:50
+msgid "Text"
+msgstr "متن"
+
+#: .\apps\ticket\models.py:51
+msgid "Related file"
+msgstr "فایل مرتبط"
+
+#: .\apps\ticket\models.py:57
+msgid "Ticket message"
+msgstr "پیام تیکت"
+
+#: .\apps\ticket\models.py:58
+msgid "Ticket messages"
+msgstr "پیام‌های تیکت"
+
+#: .\apps\ticket\signals.py:17 .\apps\ticket\signals.py:20
+msgid "New Ticket Submited"
+msgstr "تیکت جدیدی ثبت شده است"
+
+#: .\apps\ticket\views.py:43
+msgid "Ticket sent successfully"
+msgstr "تیکت با موفقیت ارسال شد"
+
+#: .\apps\ticket\views.py:78
+msgid "Message sent successfully"
+msgstr "پیام با موفقیت شد"
+
+#: .\config\settings\base.py:113
+msgid "Persian"
+msgstr "فارسی"
+
+#: .\templates\admin\base_site.html:5
+msgid "Django site admin"
+msgstr "جنگو ادمین سایت"
+
+#: .\templates\admin\base_site.html:14
+msgid "Django administration"
+msgstr "جنگو ادمین"
+
+#~ msgid "Messages"
+#~ msgstr "پیام‌ها"
+
+#~ msgid "Enter a valid URL."
+#~ msgstr "یک آدرس معتبر وارد کنید."
+
+#~ msgid "Enter a valid integer."
+#~ msgstr "یک عدد صحیح معتبر وارد کنید."
+
+#~ msgid "Enter a valid email address."
+#~ msgstr "یک آدرس ایمیل معتبر وارد کنید"
+
+#, python-format
+#~ msgid "%(model_name)s with this %(field_labels)s already exists."
+#~ msgstr "%(model_name)s با این %(field_labels)s وجود دارد."
+
+#, python-format
+#~ msgid "%(model_name)s with this %(field_label)s already exists."
+#~ msgstr "%(model_name)s با این %(field_label)s وجود دارد"
+
+#~ msgid "Seconds"
+#~ msgstr "ثانیه"
+
+#~ msgid "Please correct the error below."
+#~ msgid_plural "Please correct the errors below."
+#~ msgstr[0] "لطفا خطای زیر را درست کنید."
+#~ msgstr[1] "لطفا خطاهای زیر را درست کنید."
