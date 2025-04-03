@@ -629,10 +629,6 @@ body{
   animation: scatterUp 1s ease-in-out forwards;
 }
 
-.fixed {
-  position: fixed;
-}
-
 .relative {
   position: relative;
 }
@@ -670,6 +666,10 @@ body{
   margin-bottom: 1.5rem;
 }
 
+.mb-\[30px\] {
+  margin-bottom: 30px;
+}
+
 .mr-2 {
   margin-right: 0.5rem;
 }
@@ -688,34 +688,6 @@ body{
 
 .mt-5 {
   margin-top: 1.25rem;
-}
-
-.mb-\[\] {
-  margin-bottom: ;
-}
-
-.mb-\[-\] {
-  margin-bottom: -;
-}
-
-.mb-\[-20px\] {
-  margin-bottom: -20px;
-}
-
-.mb-\[20px\] {
-  margin-bottom: 20px;
-}
-
-.mb-\[25px\] {
-  margin-bottom: 25px;
-}
-
-.mb-\[28px\] {
-  margin-bottom: 28px;
-}
-
-.mb-\[30px\] {
-  margin-bottom: 30px;
 }
 
 .block {
@@ -777,10 +749,6 @@ body{
 
 .h-full {
   height: 100%;
-}
-
-.h-20 {
-  height: 5rem;
 }
 
 .min-h-screen {
@@ -1074,6 +1042,10 @@ body{
   line-height: 2rem;
 }
 
+.text-\[11px\] {
+  font-size: 11px;
+}
+
 .text-\[12px\] {
   font-size: 12px;
 }
@@ -1091,18 +1063,6 @@ body{
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-\[13px\] {
-  font-size: 13px;
-}
-
-.text-\[10px\] {
-  font-size: 10px;
-}
-
-.text-\[11px\] {
-  font-size: 11px;
 }
 
 .font-bold {
@@ -1153,11 +1113,6 @@ body{
   color: rgb(161 161 170 / var(--tw-text-opacity, 1));
 }
 
-.text-zinc-500 {
-  --tw-text-opacity: 1;
-  color: rgb(113 113 122 / var(--tw-text-opacity, 1));
-}
-
 .text-zinc-800 {
   --tw-text-opacity: 1;
   color: rgb(39 39 42 / var(--tw-text-opacity, 1));
@@ -1166,18 +1121,6 @@ body{
 .text-zinc-900 {
   --tw-text-opacity: 1;
   color: rgb(24 24 27 / var(--tw-text-opacity, 1));
-}
-
-.text-\[\] {
-  color: ;
-}
-
-.text-\[sm\] {
-  color: sm;
-}
-
-.text-\[11\] {
-  color: 11;
 }
 
 .placeholder-white::-moz-placeholder {
@@ -1247,24 +1190,16 @@ body{
 }
 
 @media (min-width: 768px) {
-  .md\:fixed {
-    position: fixed;
-  }
-
   .md\:col-span-2 {
     grid-column: span 2 / span 2;
   }
 
-  .md\:hidden {
-    display: none;
+  .md\:h-20 {
+    height: 5rem;
   }
 
   .md\:h-48 {
     height: 12rem;
-  }
-
-  .md\:h-20 {
-    height: 5rem;
   }
 
   .md\:w-\[500px\] {

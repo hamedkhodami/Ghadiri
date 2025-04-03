@@ -41,6 +41,16 @@ class Instructor(BaseModel):
     def get_courses_count(self):
         return self.courses.all().count() or 0
 
+class CourseCategory(BaseModel):
+
+    name = models.CharField(_('Category'), max_length=150)
+
+    class Meta:
+        verbose_name = _('Category')
+        verbose_name_plural = _('Categories')
+
+    def __str__(self):
+        return self.name
 
 # Courses model
 class Course(BaseModel):
@@ -53,6 +63,7 @@ class Course(BaseModel):
     description = HTMLField(verbose_name=_('Description'), default='')
     type = models.CharField(_('Course type'), max_length=32, choices=Types.choices, default=Types.OFFLINE)
     instructor = models.ForeignKey(Instructor, on_delete=models.SET_NULL, verbose_name=_('Instructor'), related_name='courses', null=True)
+    category = models.ForeignKey(CourseCategory, on_delete=models.CASCADE, verbose_name=_('Category'), related_name='category')
     duration = models.CharField(_('Duration'), max_length=128, help_text=_('2h, 30m'))
     payment_type = models.CharField(_('Payment type'), max_length=32, choices=PaymentTypes.choices, default=PaymentTypes.CASH)
     price = models.PositiveBigIntegerField(_('Price'), default=0)

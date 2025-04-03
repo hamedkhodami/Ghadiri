@@ -5,7 +5,7 @@ from django import forms
 
 from . models import (
     Instructor, Course, Session, Episode,
-    FAQ, UserCourse
+    FAQ, UserCourse, CourseCategory
 )
 
 
@@ -66,7 +66,7 @@ class CourseAdmin(admin.ModelAdmin):
     inlines = [SessionInline, EpisodeInline, FAQInline]
 
     fieldsets = (
-        (None, {'fields': ('title', 'slug', 'short_des', 'instructor', 'type', 'description')}),
+        (None, {'fields': ('title', 'slug', 'category', 'short_des', 'instructor', 'type', 'description')}),
         (_('Price info'), {'fields': ('payment_type', 'price', 'discount', 'selling_price')}),
         (_('Additional info'), {'fields': ('introduction_video_link', 'introduction_image', 'cover_image', 'duration', 'is_active')})
     )
@@ -90,3 +90,11 @@ class UserCourseAdmin(admin.ModelAdmin):
     @admin.display(description=_('Place name'))
     def get_place_name(self, obj):
         return obj.user.profile.place_name
+
+
+@admin.register(CourseCategory)
+class CourseCategoryAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    list_display_links = ('name',)
+    search_fields = ('name',)
+    list_filter = ('name',)
