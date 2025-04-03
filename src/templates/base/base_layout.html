@@ -1,0 +1,30 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title%}{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'public/styles/app.css' %}">
+
+    {% block extra_style %}
+    {% endblock %}
+</head>
+
+<body>
+
+{% include "base/headers.html" %}
+
+
+{% block body %}
+{% endblock %}
+
+
+
+  <script rel="" src="{% static 'public/js/main.js' %}"></script>
+
+  {% block extra_script %}
+  {% endblock %}
+</body>
+
+</html>

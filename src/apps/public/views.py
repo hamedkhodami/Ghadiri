@@ -22,3 +22,7 @@ class IndexView(LoginRequiredMixin, TemplateView):
 
 class WelcomeView(TemplateView):
     template_name = 'public/welcome.html'
+
+
+class test(TemplateView):
+    template_name = 'public/test.html'

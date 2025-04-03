@@ -1,0 +1,173 @@
+{% extends "base/base_layout.html" %}
+{% load static %}
+
+{% block title %}
+صفحه اصلی
+{% endblock %}
+
+{% block body %}
+
+<main class="content_div relative bg-gray-100">
+    <section class=" p-3 md:p-6">
+      <div class="title flex justify-center">
+        <h2 class="text-indigo-900 text-lg">دسته بندی دوره ها</h2>
+      </div>
+      <div class=" flex justify-center gap-x-3  mt-5 category-btns">
+        <button class="btn-category flex items-center bg-blue-950 px-2 py-1  text-white rounded-full text-sm sm:text-base" category-id="category1">
+            <span>بازاریـابی</span>
+            <span class="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-amber-200 text-black mr-2">
+                <img src="{% static 'public/images/bazaryabi.png' %}" alt="">
+            </span>
+        </button>
+        <button class="btn-category flex items-center bg-blue-950 px-2 py-1  text-white rounded-full text-sm sm:text-base " category-id="category2">
+            <span>ادمینی</span>
+            <span class="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-amber-200 text-black mr-2">
+                <img src="{% static 'public/images/admin.png' %}" alt="">
+            </span>
+        </button>
+        <button class="btn-category flex items-center bg-blue-950 px-2 py-1  text-white rounded-full text-sm sm:text-base "category-id="category3">
+            <span>اکسپلور</span>
+            <span class="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-amber-200 text-black mr-2">
+                <img src="{% static 'public/images/explor.png' %}" alt="">
+            </span>
+        </button>
+      </div>
+      <div class="mx-auto py-8">
+        <div class="title title-two">
+            <h2 class="text-indigo-900 text-lg">جدیدترین دوره ها</h2>
+        </div>
+        <div class="grid grid-cols-2 gap-4 mt-5">
+            <div  category-img-id="category1" class="course-card rounded-lg bg-blue-950 p-2 md:p-4">
+                <img src="{% static 'public/images/دوره تبلیغات پولساز.webp' %}" alt="Course 1" class="w-full h-28 md:h-48">
+                <div class="p-1 md:p-4 text-white">
+                    <h3 class="text-[12px] md:text-base font-semibold">دوره ادمین تبلیغات پولساز</h3>
+                    <p class="text-sm mt-2">35000  هزار تومان</p>
+                </div>
+                <div class="flex justify-end gap-x-4 flex-wrap text-zinc-400 text-[11px] md:text-base">
+                    <div class="flex gap-x-1  items-center w-full md:w-auto">
+                        <svg class="w-5 h-5">
+                            <use xlink:href="#users"></use>
+                        </svg>
+                        <span>3000 دانشجو</span>
+                    </div>
+                    <div class="flex gap-x-1  items-center w-full md:w-auto">
+                        <svg class="w-5 h-5">
+                            <use xlink:href="#clock"></use>
+                        </svg>
+                        <span>5 ساعت</span>
+                    </div>
+                </div>
+            </div>
+            <div  category-img-id="category2" class="course-card rounded-lg bg-blue-950 p-2 md:p-4">
+                <img src="{% static 'public/images/دوره تبلیغات پولساز.webp' %}" alt="Course 1" class="w-full h-28 md:h-48">
+                <div class="p-1 md:p-4 text-white">
+                    <h3 class="text-[12px] md:text-base font-semibold">دوره ادمین تبلیغات پولساز</h3>
+                    <p class="text-[12px] mt-2">35000  هزار تومان</p>
+                </div>
+                <div class="flex justify-end gap-x-4 flex-wrap text-zinc-400 text-[11px] md:text-sm">
+                    <div class="flex gap-x-1  items-center w-full md:w-auto">
+                        <svg class="w-5 h-5">
+                            <use xlink:href="#users"></use>
+                        </svg>
+                        <span>3000 دانشجو</span>
+                    </div>
+                    <div class="flex gap-x-1  items-center w-full md:w-auto">
+                        <svg class="w-5 h-5">
+                            <use xlink:href="#clock"></use>
+                        </svg>
+                        <span>5 ساعت</span>
+                    </div>
+                </div>
+            </div>
+            <div  category-img-id="category2" class="course-card rounded-lg bg-blue-950 p-2 md:p-4">
+                <img src="{% static 'public/images/دوره تبلیغات پولساز.webp' %}" alt="Course 1" class="w-full h-28 md:h-48">
+                <div class="p-1 md:p-4 text-white">
+                    <h3 class="text-[12px] md:text-base font-semibold">دوره ادمین تبلیغات پولساز</h3>
+                    <p class="text-sm mt-2">35000  هزار تومان</p>
+                </div>
+                <div class="flex justify-end gap-x-4 flex-wrap text-zinc-400 text-[11px] md:text-sm">
+                    <div class="flex gap-x-1  items-center w-full md:w-auto">
+                        <svg class="w-5 h-5">
+                            <use xlink:href="#users"></use>
+                        </svg>
+                        <span>3000 دانشجو</span>
+                    </div>
+                    <div class="flex gap-x-1  items-center w-full md:w-auto">
+                        <svg class="w-5 h-5">
+                            <use xlink:href="#clock"></use>
+                        </svg>
+                        <span>5 ساعت</span>
+                    </div>
+                </div>
+            </div>
+            <div  category-img-id="category1" class="course-card rounded-lg bg-blue-950 p-2 md:p-4">
+                <img src="{% static 'public/images/دوره تبلیغات پولساز.webp' %}" alt="Course 1" class="w-full h-28 md:h-48">
+                <div class="p-1 md:p-4 text-white">
+                    <h3 class="text-[12px] md:text-base font-semibold">دوره ادمین تبلیغات پولساز</h3>
+                    <p class="text-sm mt-2">35000  هزار تومان</p>
+                </div>
+                <div class="flex justify-end gap-x-4 flex-wrap text-zinc-400 text-[11px] md:text-sm">
+                    <div class="flex gap-x-1  items-center w-full md:w-auto">
+                        <svg class="w-5 h-5">
+                            <use xlink:href="#users"></use>
+                        </svg>
+                        <span>3000 دانشجو</span>
+                    </div>
+                    <div class="flex gap-x-1  items-center w-full md:w-auto">
+                        <svg class="w-5 h-5">
+                            <use xlink:href="#clock"></use>
+                        </svg>
+                        <span>5 ساعت</span>
+                    </div>
+                </div>
+            </div>
+            <div  category-img-id="category1" class="course-card rounded-lg bg-blue-950 p-2 md:p-4">
+                <img src="{% static 'public/images/دوره تبلیغات پولساز.webp' %}" alt="Course 1" class="w-full h-28 md:h-48">
+                <div class="p-1 md:p-4 text-white">
+                    <h3 class="text-[12px] md:text-base font-semibold">دوره ادمین تبلیغات پولساز</h3>
+                    <p class="text-sm mt-2">35000  هزار تومان</p>
+                </div>
+                <div class="flex justify-end gap-x-4 flex-wrap text-zinc-400 text-[11px] md:text-sm">
+                    <div class="flex gap-x-1  items-center w-full md:w-auto">
+                        <svg class="w-5 h-5">
+                            <use xlink:href="#users"></use>
+                        </svg>
+                        <span>3000 دانشجو</span>
+                    </div>
+                    <div class="flex gap-x-1  items-center w-full md:w-auto">
+                        <svg class="w-5 h-5">
+                            <use xlink:href="#clock"></use>
+                        </svg>
+                        <span>5 ساعت</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+      </div>
+    </section>
+
+        <div class="sticky bottom-0 left-0 w-full z-[5] h-16 md:h-20 flex items-center bg-menu bg-cover bg-no-repeat p-2">
+            <div class="flex justify-between items-center w-full">
+                <a href="#" class="flex items-center justify-center w-8 h-8">
+                    <img src="{% static 'public/images/Profile.png' %}" alt="">
+                </a>
+                <a href="#" class="flex items-center justify-center w-8 h-8">
+                    <img src="{% static 'public/images/sound.png' %}" alt="">
+                </a>
+                <a href="#" class="flex items-center justify-center w-10 h-10 rounded-full bg-yellow-600 mb-[30px]">
+                    <img src="{% static 'public/images/Home.png' %}" alt="">
+                </a>
+                <a href="#" class="flex items-center justify-center w-8 h-8">
+                    <img src="{% static 'public/images/cart.png' %}" alt="">
+                </a>
+                <a href="#" class="flex items-center justify-center w-8 h-8">
+                    <img src="{% static 'public/images/Notification.png' %}" alt="">
+                </a>
+            </div>
+        </div>
+
+</main>
+
+{% endblock %}
+

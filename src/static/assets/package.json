@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/input.css -o ./public/styles/app.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.15"
+  },
+  "dependencies": {
+    "masonry-layout": "^4.2.2",
+    "tailwind-clip-path": "^1.0.0"
+  }
+}
