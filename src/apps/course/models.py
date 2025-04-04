@@ -44,6 +44,7 @@ class Instructor(BaseModel):
 class CourseCategory(BaseModel):
 
     name = models.CharField(_('Category'), max_length=150)
+    icon = models.ImageField(_('Icon'), upload_to='images/icon_category_course/')
 
     class Meta:
         verbose_name = _('Category')

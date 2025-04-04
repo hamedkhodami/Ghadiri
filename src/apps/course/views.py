@@ -26,7 +26,7 @@ class CoursesListView(LoginRequiredMixin, ListView):
 
 # Render CourseDetail view
 class CourseDetailView(LoginRequiredMixin, DetailView):
-    template_name = 'course/details.html'
+    template_name = 'course/single-course.html'
     model = Course
 
     def get_context_data(self, **kwargs):

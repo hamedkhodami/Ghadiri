@@ -8,141 +8,57 @@
 {% block body %}
 
 <main class="content_div relative bg-gray-100">
+
     <section class=" p-3 md:p-6">
       <div class="title flex justify-center">
         <h2 class="text-indigo-900 text-lg">دسته بندی دوره ها</h2>
       </div>
       <div class=" flex justify-center gap-x-3  mt-5 category-btns">
+      {% for category in categories %}
         <button class="btn-category flex items-center bg-blue-950 px-2 py-1  text-white rounded-full text-sm sm:text-base" category-id="category1">
-            <span>بازاریـابی</span>
+            <span>{{ category.name }}</span>
             <span class="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-amber-200 text-black mr-2">
-                <img src="{% static 'public/images/bazaryabi.png' %}" alt="">
+                <img src="{{ category.icon.url }}" alt="{{ category.name }}">
             </span>
         </button>
-        <button class="btn-category flex items-center bg-blue-950 px-2 py-1  text-white rounded-full text-sm sm:text-base " category-id="category2">
-            <span>ادمینی</span>
-            <span class="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-amber-200 text-black mr-2">
-                <img src="{% static 'public/images/admin.png' %}" alt="">
-            </span>
-        </button>
-        <button class="btn-category flex items-center bg-blue-950 px-2 py-1  text-white rounded-full text-sm sm:text-base "category-id="category3">
-            <span>اکسپلور</span>
-            <span class="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-amber-200 text-black mr-2">
-                <img src="{% static 'public/images/explor.png' %}" alt="">
-            </span>
-        </button>
+      {% endfor %}
       </div>
       <div class="mx-auto py-8">
         <div class="title title-two">
             <h2 class="text-indigo-900 text-lg">جدیدترین دوره ها</h2>
         </div>
         <div class="grid grid-cols-2 gap-4 mt-5">
-            <div  category-img-id="category1" class="course-card rounded-lg bg-blue-950 p-2 md:p-4">
-                <img src="{% static 'public/images/دوره تبلیغات پولساز.webp' %}" alt="Course 1" class="w-full h-28 md:h-48">
+          {% for course in courses %}
+            <a href="{% url 'course:course_detail' slug=course.slug %}">
+                <div  category-img-id="category1" class="course-card rounded-lg bg-blue-950 p-2 md:p-4">
+                <img src="{{ course.cover_image.url }}" alt="{{ course.title }}" class="w-full h-28 md:h-48">
                 <div class="p-1 md:p-4 text-white">
-                    <h3 class="text-[12px] md:text-base font-semibold">دوره ادمین تبلیغات پولساز</h3>
-                    <p class="text-sm mt-2">35000  هزار تومان</p>
+                    <h3 class="text-[12px] md:text-base font-semibold">{{ course.title }}</h3>
+                    <p class="text-sm mt-2">
+                        {% if course.selling_price == 0 %}
+                          رایگان
+                        {% else %}
+                          هزار تومان {{ course.selling_price }}
+                        {% endif %}
+                    </p>
                 </div>
                 <div class="flex justify-end gap-x-4 flex-wrap text-zinc-400 text-[11px] md:text-base">
                     <div class="flex gap-x-1  items-center w-full md:w-auto">
                         <svg class="w-5 h-5">
                             <use xlink:href="#users"></use>
                         </svg>
-                        <span>3000 دانشجو</span>
+                        <span>{{ course.category }}</span>
                     </div>
                     <div class="flex gap-x-1  items-center w-full md:w-auto">
                         <svg class="w-5 h-5">
                             <use xlink:href="#clock"></use>
                         </svg>
-                        <span>5 ساعت</span>
+                        <span>{{ course.duration }}</span>
                     </div>
                 </div>
             </div>
-            <div  category-img-id="category2" class="course-card rounded-lg bg-blue-950 p-2 md:p-4">
-                <img src="{% static 'public/images/دوره تبلیغات پولساز.webp' %}" alt="Course 1" class="w-full h-28 md:h-48">
-                <div class="p-1 md:p-4 text-white">
-                    <h3 class="text-[12px] md:text-base font-semibold">دوره ادمین تبلیغات پولساز</h3>
-                    <p class="text-[12px] mt-2">35000  هزار تومان</p>
-                </div>
-                <div class="flex justify-end gap-x-4 flex-wrap text-zinc-400 text-[11px] md:text-sm">
-                    <div class="flex gap-x-1  items-center w-full md:w-auto">
-                        <svg class="w-5 h-5">
-                            <use xlink:href="#users"></use>
-                        </svg>
-                        <span>3000 دانشجو</span>
-                    </div>
-                    <div class="flex gap-x-1  items-center w-full md:w-auto">
-                        <svg class="w-5 h-5">
-                            <use xlink:href="#clock"></use>
-                        </svg>
-                        <span>5 ساعت</span>
-                    </div>
-                </div>
-            </div>
-            <div  category-img-id="category2" class="course-card rounded-lg bg-blue-950 p-2 md:p-4">
-                <img src="{% static 'public/images/دوره تبلیغات پولساز.webp' %}" alt="Course 1" class="w-full h-28 md:h-48">
-                <div class="p-1 md:p-4 text-white">
-                    <h3 class="text-[12px] md:text-base font-semibold">دوره ادمین تبلیغات پولساز</h3>
-                    <p class="text-sm mt-2">35000  هزار تومان</p>
-                </div>
-                <div class="flex justify-end gap-x-4 flex-wrap text-zinc-400 text-[11px] md:text-sm">
-                    <div class="flex gap-x-1  items-center w-full md:w-auto">
-                        <svg class="w-5 h-5">
-                            <use xlink:href="#users"></use>
-                        </svg>
-                        <span>3000 دانشجو</span>
-                    </div>
-                    <div class="flex gap-x-1  items-center w-full md:w-auto">
-                        <svg class="w-5 h-5">
-                            <use xlink:href="#clock"></use>
-                        </svg>
-                        <span>5 ساعت</span>
-                    </div>
-                </div>
-            </div>
-            <div  category-img-id="category1" class="course-card rounded-lg bg-blue-950 p-2 md:p-4">
-                <img src="{% static 'public/images/دوره تبلیغات پولساز.webp' %}" alt="Course 1" class="w-full h-28 md:h-48">
-                <div class="p-1 md:p-4 text-white">
-                    <h3 class="text-[12px] md:text-base font-semibold">دوره ادمین تبلیغات پولساز</h3>
-                    <p class="text-sm mt-2">35000  هزار تومان</p>
-                </div>
-                <div class="flex justify-end gap-x-4 flex-wrap text-zinc-400 text-[11px] md:text-sm">
-                    <div class="flex gap-x-1  items-center w-full md:w-auto">
-                        <svg class="w-5 h-5">
-                            <use xlink:href="#users"></use>
-                        </svg>
-                        <span>3000 دانشجو</span>
-                    </div>
-                    <div class="flex gap-x-1  items-center w-full md:w-auto">
-                        <svg class="w-5 h-5">
-                            <use xlink:href="#clock"></use>
-                        </svg>
-                        <span>5 ساعت</span>
-                    </div>
-                </div>
-            </div>
-            <div  category-img-id="category1" class="course-card rounded-lg bg-blue-950 p-2 md:p-4">
-                <img src="{% static 'public/images/دوره تبلیغات پولساز.webp' %}" alt="Course 1" class="w-full h-28 md:h-48">
-                <div class="p-1 md:p-4 text-white">
-                    <h3 class="text-[12px] md:text-base font-semibold">دوره ادمین تبلیغات پولساز</h3>
-                    <p class="text-sm mt-2">35000  هزار تومان</p>
-                </div>
-                <div class="flex justify-end gap-x-4 flex-wrap text-zinc-400 text-[11px] md:text-sm">
-                    <div class="flex gap-x-1  items-center w-full md:w-auto">
-                        <svg class="w-5 h-5">
-                            <use xlink:href="#users"></use>
-                        </svg>
-                        <span>3000 دانشجو</span>
-                    </div>
-                    <div class="flex gap-x-1  items-center w-full md:w-auto">
-                        <svg class="w-5 h-5">
-                            <use xlink:href="#clock"></use>
-                        </svg>
-                        <span>5 ساعت</span>
-                    </div>
-                </div>
-            </div>
-
+            </a>
+          {% endfor %}
         </div>
       </div>
     </section>

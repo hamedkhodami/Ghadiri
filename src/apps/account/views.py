@@ -17,7 +17,7 @@ from random import randint
 
 # Render Login view
 class LoginView(LogoutRequiredMixin, FormView):
-    template_name = 'account/login.html'
+    template_name = 'account/signin.html'
     form_class = forms.LoginForm
     success_url = '/'
 
@@ -51,7 +51,7 @@ class LoginView(LogoutRequiredMixin, FormView):
 
 # Render Register view
 class RegisterView(LogoutRequiredMixin, FormView):
-    template_name = 'account/register.html'
+    template_name = 'account/signup.html'
     form_class = forms.UserCreationForm
     success_url = reverse_lazy('account:send_code')
 

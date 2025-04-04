@@ -1,55 +1,11 @@
+{% extends "base/base_layout.html" %}
 {% load static %}
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دوره آموزشی</title>
-    <!-- لینک به Tailwind CSS -->
-    <link rel="stylesheet" href="./styles/app.css">
-</head>
-<body>
-    <svg class="hidden">
-        <symbol id="search" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-        </symbol>
-        <symbol id="users" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
-        </symbol>
-        <symbol id="clock" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-        </symbol>
-        <symbol id="download" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
-        </symbol>
-        <symbol id="chevron-down" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-        </symbol>
 
+{% block title %}
+صفحه اصلی
+{% endblock %}
 
-
-
-    </svg>
-    <header class=" bg-gray-100 flex items-center content_div h-24 px-6 md:px-10 mx-auto">
-        <div class="w-full flex items-center justify-between flex-wrap">
-            <div class="flex items-center gap-x-4">
-                <div class="flex items-center gap-x-2">
-                    <div class="flex-shrink-0">
-                        <img src="./images/user.jpg" alt="Profile Picture" class="w-12 h-12 rounded-full">
-                     </div>
-
-                    <div>
-                        <p class="text-base font-bold">فائزه پورحسنی</p>
-                        <p class="text-sm text-gray-500">کرمان</p>
-                    </div>
-                </div>
-            </div>
-            <div class="flex items-center gap-x-4">
-                <div>
-                   <img src="./images/logo.png" alt="" class="w-16">
-                </div>
-            </div>
-        </div>
-    </header>
+{% block body %}
 
     <main class="content_div relative bg-gray-100">
         <div class="container mx-auto">
@@ -58,79 +14,80 @@
 
               <!-- Sidebar -->
               <div class="bg-white p-6 rounded-lg shadow-md h-auto">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">نام دوره</h2>
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">{{ object.title }}</h2>
 
                 <div class="grid grid-cols-2 gap-4 mb-4">
                   <!-- استاد -->
                   <div class="bg-gray-200 p-4 rounded-md flex flex-col items-center justify-center">
                     <h3 class="text-gray-800 font-semibold mb-2">نام استاد</h3>
-                    <p class="text-gray-600">استاد نامی</p>
+                    <p class="text-gray-600">{{ object.instructor }}</p>
                   </div>
 
                   <!-- زمان دوره -->
                   <div class="bg-gray-200 p-4 rounded-md flex flex-col items-center justify-center">
                     <h3 class="text-gray-800 font-semibold mb-2">زمان دوره</h3>
-                    <p class="text-gray-600">۲ ساعت</p>
+                    <p class="text-gray-600">{{ object.duration }}</p>
                   </div>
 
                   <!-- تاریخ شروع -->
                   <div class="bg-gray-200 p-4 rounded-md flex flex-col items-center justify-center">
                     <h3 class="text-gray-800 font-semibold mb-2">تاریخ شروع</h3>
-                    <p class="text-gray-600">۲۹ اسفند ۱۴۰۳</p>
+                    <p class="text-sm mt-2">{{ object.short_des }}</p>
                   </div>
 
                   <!-- سطح -->
                   <div class="bg-gray-200 p-4 rounded-md flex flex-col items-center justify-center">
                     <h3 class="text-gray-800 font-semibold mb-2">سطح</h3>
-                    <p class="text-gray-600">مقدماتی</p>
+                    <p class="text-gray-600">{{ course.type }}</p>
                   </div>
                 </div>
 
                 <button class="w-full py-2 px-4 bg-blue-600 text-white rounded-lg">ثبت نام در دوره</button>
               </div>
 
-              <!-- Include Font Awesome -->
-              <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
-
-              <!-- Include Font Awesome -->
-              <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
               <div class="md:col-span-2">
                 <div class=" bg-white p-6 rounded-lg shadow-md mt-3">
-                    <div class="">
+                    <div>
                       <video class="w-full h-full rounded-md" controls>
-                        <source src="../public/images/Rec 0009.mp4" type="video/mp4">
+                        <source src="{{ course.introduction_video_link.url }}" type="video/mp4">
                         مرورگر شما از نمایش ویدیو پشتیبانی نمی‌کند.
                       </video>
                     </div>
                     <div class="mt-3">
-                        <h2 class="text-lg font-bold">دوره اینستاگرام پولساز</h2>
-                        <p>دسته بندی</p>
+                        <h2 class="text-lg font-bold">{{ object.title }}</h2>
+                        <p>دسته بندی :  {{ object.category }}</p>
                         <div class="flex justify-between items-center">
-                            <span>360هزار تومان</span>
+                            <span>
+                                {% if course.selling_price == 0 %}
+                                  رایگان
+                                {% else %}
+                                  هزار تومان {{ course.selling_price }}
+                                {% endif %}
+                            </span>
                             <button class="bg-blue-950 py-2 px-3 rounded-md text-white">مشاده دوره</button>
                         </div>
                     </div>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md mt-3">
                     <h2 class="font-bold text-lg">توضیخات دوره</h2>
-                    <p class="text-justify">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
+                    <p class="text-justify">{{ course.description|safe }}</p>
                 </div>
 
                 <div class="p-1 md:p-6 mt-3">
                     <h2 class="p-2 font-bold text-lg">سر فصل ای دوره</h2>
                     <div class="accordion">
+                        {% for session in course.get_sessions %}
                         <div class="border-b mt-2">
                           <button class="accordion-button w-full text-left px-4 py-3 flex items-center justify-between text-white text-base bg-blue-950 rounded-lg">
-                            <span>سر فصل</span>
+                            <span>{{ session.title }}</span>
                             <svg class="w-5 h-5 text-white">
                                 <use xlink:href="#chevron-down"></use>
                             </svg>
                           </button>
                           <div class="accordion-content hidden ">
-                            <div class="flex justify-between items-center bg-slate-500 text-white rounded-md px-2 py-1 text-sm  mt-1">
-                                <span>سرفصل ویدئو</span>
+                            {% for episode in session.get_episodes %}
+                                <div class="flex justify-between items-center bg-slate-500 text-white rounded-md px-2 py-1 text-sm  mt-1">
+                                <span>{{ episode.title }}</span>
                                 <div class="flex items-center gap-1">
                                     <a href="">
                                         <svg class="w-8 h-8 bg-blue-600 p-1 rounded-sm">
@@ -140,121 +97,16 @@
                                     <button class="bg-green-950 p-2 rounded-md text-[12px]">مشاهده ویدئو</button>
                                 </div>
                             </div>
-                            <div class="flex justify-between items-center bg-slate-500 text-white rounded-md px-2 py-1 text-sm  mt-1">
-                                <span>سرفصل ویدئو</span>
-                                <div class="flex items-center gap-1">
-                                    <a href="">
-                                        <svg class="w-8 h-8 bg-blue-600 p-1 rounded-sm">
-                                            <use xlink:href="#download"></use>
-                                        </svg>
-                                    </a>
-                                    <button class="bg-green-950 p-2 rounded-md text-[12px]">مشاهده ویدئو</button>
-                                </div>
-                            </div>
-                            <div class="flex justify-between items-center bg-slate-500 text-white rounded-md px-2 py-1 text-sm  mt-1">
-                                <span>سرفصل ویدئو</span>
-                                <div class="flex items-center gap-1">
-                                    <a href="">
-                                        <svg class="w-8 h-8 bg-blue-600 p-1 rounded-sm">
-                                            <use xlink:href="#download"></use>
-                                        </svg>
-                                    </a>
-                                    <button class="bg-green-950 p-2 rounded-md text-[12px]">مشاهده ویدئو</button>
-                                </div>
-                            </div>
-                            <div class="flex justify-between items-center bg-slate-500 text-white rounded-md px-2 py-1 text-sm  mt-1">
-                                <span>سرفصل ویدئو</span>
-                                <div class="flex items-center gap-1">
-                                    <a href="">
-                                        <svg class="w-8 h-8 bg-blue-600 p-1 rounded-sm">
-                                            <use xlink:href="#download"></use>
-                                        </svg>
-                                    </a>
-                                    <button class="bg-green-950 p-2 rounded-md text-[12px]">مشاهده ویدئو</button>
-                                </div>
-                            </div>
+                            {% endfor %}
                           </div>
                         </div>
-                        <div class="border-b mt-2">
-                            <button class="accordion-button w-full text-left px-4 py-3 flex items-center justify-between text-white text-base bg-blue-950 rounded-lg">
-                              <span>سر فصل</span>
-                              <svg class="w-5 h-5 text-white">
-                                  <use xlink:href="#chevron-down"></use>
-                              </svg>
-                            </button>
-                            <div class="accordion-content hidden ">
-                              <div class="flex justify-between items-center bg-slate-500 text-white rounded-md px-2 py-1 text-sm  mt-1">
-                                  <span>سرفصل ویدئو</span>
-                                  <div class="flex items-center gap-1">
-                                      <a href="">
-                                          <svg class="w-8 h-8 bg-blue-600 p-1 rounded-sm">
-                                              <use xlink:href="#download"></use>
-                                          </svg>
-                                      </a>
-                                      <button class="bg-green-950 p-2 rounded-md text-[12px]">مشاهده ویدئو</button>
-                                  </div>
-                              </div>
-                              <div class="flex justify-between items-center bg-slate-500 text-white rounded-md px-2 py-1 text-sm  mt-1">
-                                  <span>سرفصل ویدئو</span>
-                                  <div class="flex items-center gap-1">
-                                      <a href="">
-                                          <svg class="w-8 h-8 bg-blue-600 p-1 rounded-sm">
-                                              <use xlink:href="#download"></use>
-                                          </svg>
-                                      </a>
-                                      <button class="bg-green-950 p-2 rounded-md text-[12px]">مشاهده ویدئو</button>
-                                  </div>
-                              </div>
-                              <div class="flex justify-between items-center bg-slate-500 text-white rounded-md px-2 py-1 text-sm  mt-1">
-                                  <span>سرفصل ویدئو</span>
-                                  <div class="flex items-center gap-1">
-                                      <a href="">
-                                          <svg class="w-8 h-8 bg-blue-600 p-1 rounded-sm">
-                                              <use xlink:href="#download"></use>
-                                          </svg>
-                                      </a>
-                                      <button class="bg-green-950 p-2 rounded-md text-[12px]">مشاهده ویدئو</button>
-                                  </div>
-                              </div>
-                              <div class="flex justify-between items-center bg-slate-500 text-white rounded-md px-2 py-1 text-sm  mt-1">
-                                  <span>سرفصل ویدئو</span>
-                                  <div class="flex items-center gap-1">
-                                      <a href="">
-                                          <svg class="w-8 h-8 bg-blue-600 p-1 rounded-sm">
-                                              <use xlink:href="#download"></use>
-                                          </svg>
-                                      </a>
-                                      <button class="bg-green-950 p-2 rounded-md text-[12px]">مشاهده ویدئو</button>
-                                  </div>
-                              </div>
-                            </div>
-                        </div>
-                      </div>
-
+                        {% endfor %}
+                    </div>
+                    {% include "base/footers.html" %}
                 </div>
               </div>
             </div>
         </div>
-        <div class="sticky bottom-0 left-0 w-full z-[5] h-16 flex items-center bg-blue-950 p-2">
-            <div class="flex justify-between items-center w-full">
-                <a href="#" class="flex items-center justify-center w-8 h-8">
-                    <img src="./images/Profile.png" alt="">
-                </a>
-                <a href="#" class="flex items-center justify-center w-8 h-8">
-                    <img src="./images/sound.png" alt="">
-                </a>
-                <a href="#" class="flex items-center justify-center w-10 h-10 rounded-full bg-yellow-600">
-                    <img src="./images/Home.png" alt="">
-                </a>
-                <a href="#" class="flex items-center justify-center w-8 h-8">
-                    <img src="./images/cart.png" alt="">
-                </a>
-                <a href="#" class="flex items-center justify-center w-8 h-8">
-                    <img src="./images/Notification.png" alt="">
-                </a>
-            </div>
-        </div>
     </main>
-    <script rel="" src="{% static 'public/js/main.js' %}"></script>
-</body>
-</html>
+
+{% endblock %}

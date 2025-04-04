@@ -46,10 +46,10 @@
           <img src="{% static 'public/images/logoghadiri.png' %}" alt="">
         </div>
         <p class="mb-6 text-white text-lg text-center">
-            اگر هنوز ثبت نام نکرده اید
+            اگر قبلا ثبت نام کرده اید
             <br>
             شما میتوانید
-            <a href="YOUR_LOGIN_URL" class="text-[#FCA311] font-bold hover:underline">ثبت نام کنید!</a>
+            <a href="YOUR_LOGIN_URL" class="text-[#FCA311] font-bold hover:underline">لاگین گنید</a>
         </p>
         <form action="#" onsubmit="return validateForm()">
           <div class="mb-4">
@@ -78,8 +78,24 @@
             </div>
           </div>
 
+          <div class="mb-4">
+            <div id="confirm-password-error" class="font-bold text-center"></div> <!-- محل نمایش ارور تایید پسورد -->
+            <div class="flex items-center bg-gray-200 bg-opacity-50 rounded-full p-2">
+              <svg class="w-6 h-6 text-white">
+                <use xlink:href="#lock-closed"></use>
+              </svg>
+              <input class="p-3 w-full text-sm text-zinc-800 placeholder-white bg-transparent focus:outline-none" id="confirm-password" type="password" placeholder="تکرار را وارد کنید">
+              <svg class="w-6 h-6 text-white cursor-pointer" id="toggleConfirmPassword">
+                <use xlink:href="#eye"></use>
+              </svg>
+              <svg class="w-6 h-6 text-white cursor-pointer hidden" id="toggleConfirmPasswordSlash">
+                <use xlink:href="#eye-slash"></use>
+              </svg>
+            </div>
+          </div>
+
           <div class="mb-6 flex justify-center">
-            <button class="w-[80%] bg-[#FCA311] text-white font-bold py-2 px-4 rounded-full">ورود</button>
+            <button class="w-[80%] bg-[#FCA311] text-white font-bold py-2 px-4 rounded-full">ثبت نام</button>
           </div>
         </form>
       </div>

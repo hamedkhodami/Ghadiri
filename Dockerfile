@@ -1,20 +1,16 @@
-# Use the official Python image from Docker Hub
-FROM python:3.12
+FROM docker.arvancloud.ir/python:3.12-slim
 
-# Set the working directory in the container
-WORKDIR /django_app/
+ENV PYTHONDONTWRITEBYTECODE=1
 
-# Copy the requirements file into the container
-ADD ./requirements.txt ./
+ENV PYTHONUNBUFFERED=1
 
-# Install any needed packages specified in requirements.txt
-RUN pip install --upgrade pip && pip install -r ./requirements.txt
+WORKDIR /app
 
-# Change the working directory
-WORKDIR /django_app/src
+COPY requirements.txt /app/
+RUN pip install --upgrade pip && pip3 install -r requirements.txt
 
-# Copy the rest of the working directory contents into the container
-ADD ./src ./
+COPY src /app/src
 
-# Specify the entrypoint command to run on container start
-ENTRYPOINT ["/bin/sh", "-c" , "python manage.py migrate && gunicorn --bind 0.0.0.0:8000 config.wsgi"]
+EXPOSE 8000
+
+CMD ["python", "src/manage.py", "runserver", "0.0.0.0:8000"]
