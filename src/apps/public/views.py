@@ -26,4 +26,4 @@ class WelcomeView(TemplateView):
 
 
 class test(TemplateView):
-    template_name = 'public/test.html'
+    template_name = 'course/allcourses.html'

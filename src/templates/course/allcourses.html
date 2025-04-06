@@ -2,35 +2,19 @@
 {% load static %}
 
 {% block title %}
-صفحه اصلی
+ دوره ها
 {% endblock %}
 
 {% block body %}
 
 <main class="content_div relative bg-gray-100">
-
     <section class=" p-3 md:p-6">
       <div class="title flex justify-center">
-        <h2 class="text-indigo-900 text-lg">دسته بندی دوره ها</h2>
+        <h2 class="text-indigo-900 text-lg">همه دوره ها</h2>
       </div>
-      <div class=" flex justify-center gap-x-3  mt-5 category-btns">
-      {% for category in categories %}
-          <a href="{% url 'course:category_course' category.id %}">
-            <button class="btn-category flex items-center bg-blue-950 px-2 py-1  text-white rounded-full text-sm sm:text-base" category-id="category1">
-                <span>{{ category.name }}</span>
-                <span class="flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-amber-200 text-black mr-2">
-                    <img src="{{ category.icon.url }}" alt="{{ category.name }}">
-                </span>
-            </button>
-          </a>
-      {% endfor %}
-      </div>
-      <div class="mx-auto py-8">
-        <div class="title title-two">
-            <h2 class="text-indigo-900 text-lg">جدیدترین دوره ها</h2>
-        </div>
+      <div class="mx-auto py-3">
         <div class="grid grid-cols-2 gap-4 mt-5">
-          {% for course in courses %}
+            {% for course in object_list %}
             <a href="{% url 'course:course_detail' slug=course.slug %}">
                 <div  category-img-id="category1" class="course-card rounded-lg bg-blue-950 p-2 md:p-4">
                 <img src="{{ course.cover_image.url }}" alt="{{ course.title }}" class="w-full h-28 md:h-48">
@@ -60,14 +44,30 @@
                 </div>
             </div>
             </a>
-          {% endfor %}
+            {% endfor %}
         </div>
       </div>
     </section>
-
-    {% include "base/footers.html" %}
-
-
 </main>
+
+<div class="fixed-element bg-menu bg-cover">
+    <div class="flex justify-between items-center w-full">
+        <a href="#" class="flex items-center justify-center w-8 h-8">
+            <img src="{% static 'public/' %}./images/Profile.png" alt="">
+        </a>
+        <a href="#" class="flex items-center justify-center w-8 h-8">
+            <img src="{% static 'public/images/sound.png' %}" alt="">
+        </a>
+        <a href="#" class="flex items-center justify-center w-10 h-10 rounded-full bg-yellow-600 mb-[30px]">
+            <img src="{% static 'public/images/Home.png' %}" alt="">
+        </a>
+        <a href="#" class="flex items-center justify-center w-8 h-8">
+            <img src="{% static 'public/images/cart.png' %}" alt="">
+        </a>
+        <a href="#" class="flex items-center justify-center w-8 h-8">
+            <img src="{% static 'public/images/Notification.png' %}" alt="">
+        </a>
+    </div>
+</div>
 
 {% endblock %}

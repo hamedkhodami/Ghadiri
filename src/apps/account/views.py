@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, reverse, get_object_or_404
+from django.shortcuts import redirect, reverse, get_object_or_404, render
 from django.views.generic import View, TemplateView, FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.translation import gettext as _
@@ -9,6 +9,8 @@ from django.contrib import messages
 from apps.core.utils import toast_form_errors, validate_form
 from apps.notification.models import Notification
 from apps.notification.utils import create_notify_for_admins
+from apps.ticket.models import Ticket
+from apps.course.models import Course
 from .mixinx import LogoutRequiredMixin
 from .models import User
 from . import forms
@@ -217,6 +219,19 @@ class ResetPassCompleteView(LogoutRequiredMixin, FormView):
 class UserProfileView(LoginRequiredMixin, TemplateView):
     template_name = 'account/profile.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user = self.request.user
+        context['ticket_count'] = Ticket.objects.filter(user=user).count()
+        context['course_count'] = Course.objects.filter(user=user).count()
+        return context
+
+    def get(self, request):
+        form = forms.UpdateProfileForm(instance=request.user.profile, initial={
+            'phone_number' : request.user.phone_number
+        })
+        return render(request, self.template_name, {'form':form})
+
     def post(self, request):
         form = forms.UpdateProfileForm(data=request.POST, files=request.FILES, instance=request.user.profile)
         if validate_form(request, form):
@@ -225,7 +240,7 @@ class UserProfileView(LoginRequiredMixin, TemplateView):
             messages.success(request, _('Profile updated successfully'))
             return redirect('account:profile_details')
 
-        return redirect('account:profile_details')
+        return render(request, self.template_name, {'form':form})
 
 
 # EditPassword view

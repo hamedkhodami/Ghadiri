@@ -9,5 +9,6 @@ urlpatterns = [
     path('my-list/', views.UserCourseListView.as_view(), name='user_course_list'),
     path('purchase/', views.PurchaseCourseView.as_view(), name='purchase_course'),
     path('add/', views.AddCourseView.as_view(), name='add_course'),
+    path('category/<int:category_id>/', views.CourseCategoryView.as_view(), name='category_course'),
     re_path(r'(?P<slug>[-\w]+)/', views.CourseDetailView.as_view(), name='course_detail'),
 ]

@@ -57,7 +57,7 @@ class FAQInline(admin.StackedInline):
 # Register Course model admin
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'instructor', 'type', 'discount', 'get_selling_price')
+    list_display = ('id', 'category', 'title', 'instructor', 'type', 'discount', 'get_selling_price')
     list_display_links = ('id', 'title')
     search_fields = ('title',)
     list_filter = ('is_active', 'type')

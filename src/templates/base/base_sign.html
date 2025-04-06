@@ -8,26 +8,33 @@
     <title>{% block title%}{% endblock %}</title>
 
     <link rel="stylesheet" href="{% static 'public/styles/app.css' %}">
+    <style>
+  .error {
+    border-color: red !important;
+    font-size: 15px;
+  }
 
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+  }
+</style>
     {% block extra_style %}
     {% endblock %}
 </head>
 
-<body>
-
-{% include "base/headers.html" %}
-
+<body class="flex items-center justify-center min-h-screen">
 
 {% block body %}
 {% endblock %}
 
 
-
-  <script rel="" src="{% static 'public/js/main.js' %}"></script>
-
+  <script src="{% static 'public/js/signup-in.js' %}"></script>
 
   {% block extra_script %}
   {% endblock %}
-</body>
 
+</body>
 </html>
