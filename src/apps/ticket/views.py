@@ -22,12 +22,13 @@ class TicketListView(LoginRequiredMixin, ListView):
 
 # Render TicketCreate view
 class TicketCreateView(LoginRequiredMixin, FormView):
-    template_name = 'ticket/tickets_create.html'
+    template_name = 'ticket/ticket_list.html'
     form_class = forms.CreateTicketForm
     success_url = reverse_lazy('ticket:ticket_list')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['form'] = forms.CreateTicketForm(initial={'user':self.request.user})
         context['tickets'] = Ticket.objects.filter(is_active=True, user=self.request.user)
         return context
 
@@ -39,9 +40,14 @@ class TicketCreateView(LoginRequiredMixin, FormView):
         return form_class
 
     def form_valid(self, form):
+        print("form valid :" ,form.cleaned_data)
         form.save()
         messages.success(self.request, _('Ticket sent successfully'))
         return super().form_valid(form)
+
+    def form_invalid(self, form):
+        print("form invalid :", form.cleaned_data)
+        return super().form_invalid(form)
 
 
 # Render TicketDetails view

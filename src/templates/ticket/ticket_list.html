@@ -1,0 +1,84 @@
+{% extends "base/base_layout.html" %}
+{% load static %}
+
+{% block title %}
+صفحه اصلی
+{% endblock %}
+
+{% block body %}
+
+<main class="content_div bg-gray-100" style="padding-bottom:70px;">
+    <section class="p-3">
+        <div class="content-modal modal-ticket fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-6">
+            <div class="inner-modal bg-white p-6 rounded-lg shadow-xl w-full sm:w-96">
+                <form class="px-4 pt-2" method="post" enctype="multipart/form-data" action="{% url 'ticket:create_ticket' %}">
+                    {% csrf_token %}
+                        <div class="py-2">
+                            <div class="modal-title mb-4">
+                                <input type="text" name="title" class="w-full p-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="عنوان تیکت">
+                            </div>
+                            <div class="mb-4">
+                                <label for="type" class="block text-sm text-gray-700 mb-2">نوع تیکت</label>
+                                <select name="type" id="type" class="w-full p-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                                    {% for value, label in form.type.field.choices %}
+                                        <option value="{{ value }}">{{ label }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="upload-file mt-4">
+                            <label for="file" class="block text-sm text-gray-700 mb-2">فایل پیوست</label>
+                            <input type="file" id="file" name="file" class="w-full p-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                        </div>
+                        <div class="btns-modal flex justify-between mt-6 gap-2">
+                            <div class="btn-modal w-1/2">
+                                <button type="submit" class="btn-send-modal w-full block text-center bg-yellow-500 text-white text-[13px] py-2 rounded-lg hover:bg-yellow-600 cursor-pointer">
+                                    ارسال
+                                </button>
+                            </div>
+                            <div class="btn-modal close-modal-adamtaeid w-1/2">
+                                <span class="w-full block text-center bg-gray-300 text-gray-700 py-2 rounded-lg text-[13px] hover:bg-gray-400 cursor-pointer">
+                                    لغو
+                                </span>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="flex justify-start p-3">
+        <button class="btn-modal-1 bg-yellow-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-yellow-600 focus:outline-none">
+            تیکت جدید
+        </button>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-6 p-3 mb:p-5">
+            {% for ticket in tickets %}
+            <div class="item-ticket bg-gray-700 text-white p-4 rounded-lg shadow-md">
+                <div class="title-tiket text-yellow-400 mb-2">
+                    <span>{{ ticket.title }}</span>
+                </div>
+                <div class="des-1 text-sm mb-2">
+                    {{ ticket.get_type_label }}
+                </div>
+                <div class="des-2 bg-gray-600 p-2 rounded-md text-[13px]">
+                    {% for message in ticket.get_messages %}
+                        <div class="message-item border-b border-gray-500 py-2">
+                            <p><strong>{{ message.user }}:</strong></p>
+                            <p>{{ message.text }}</p>
+                            {% if message.file %}
+                                <a href="{{ message.file.url }}" class="text-blue-400 underline">دانلود فایل</a>
+                            {% endif %}
+                            <p class="text-gray-400 text-xs mt-1">{{ message.get_created_date }}</p>
+                        </div>
+                    {% empty %}
+                        <p class="text-gray-400 italic">هیچ پیامی ثبت نشده.</p>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+
+{% include "base/footer.html" %}
+{% endblock %}
