@@ -2,7 +2,7 @@ from django.shortcuts import redirect, reverse, get_object_or_404, render
 from django.views.generic import View, TemplateView, FormView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.translation import gettext as _
-from django.contrib.auth import login
+from django.contrib.auth import login, update_session_auth_hash
 from django.urls import reverse_lazy
 from django.contrib import messages
 
@@ -245,15 +245,17 @@ class UserProfileView(LoginRequiredMixin, TemplateView):
 
 # EditPassword view
 class EditPasswordView(LoginRequiredMixin, View):
+    def get(self, request):
+        form = forms.CustomPasswordChangeForm(user=request.user)
+        return render(request, 'account/password/edit_password.html', {'form': form})
 
     def post(self, request):
-        if not request.user.check_password(request.POST.get('password1')):
-            messages.error(request, _('Password is not correct'))
+        form = forms.CustomPasswordChangeForm(user=request.user, data=request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)
+            messages.success(request, _('Password changed successfully'))
             return redirect('account:profile_details')
-
-        user = request.user
-        user.set_password(request.POST.get('password2'))
-        user.save()
-
-        messages.success(request, _('Password changed successfully'))
-        return redirect(reverse('account:login') + f'?next={reverse("account:profile_details")}')
+        else:
+            messages.error(request, _('Please correct the error below.'))
+        return render(request, 'account/password/edit_password.html', {'form': form})

@@ -67,6 +67,41 @@ document.addEventListener("DOMContentLoaded", function () {
   
   
   
+document.addEventListener("DOMContentLoaded", () => {
+  const btnsShowModal = document.querySelector(".btn-modal-1");
+  const btnsCloseModal = document.querySelector(".close-modal-adamtaeid");
+  const btnsSendModal = document.querySelector(".btn-send-modal");
+  const contentModals = document.querySelector(".modal-ticket");
 
+  // نمایش مدال
+  if (btnsShowModal) {
+    btnsShowModal.addEventListener("click", () => {
+      contentModals.classList.remove("hidden");
+    });
+  }
+
+  // بستن مدال
+  if (btnsCloseModal) {
+    btnsCloseModal.addEventListener("click", () => {
+      contentModals.classList.add("hidden");
+    });
+  }
+
+  if (btnsSendModal) {
+    btnsSendModal.addEventListener("click", () => {
+      contentModals.classList.add("hidden");
+    });
+  }
+
+
+  if (contentModals) {
+    contentModals.addEventListener("click", (e) => {
+
+      if (e.target === contentModals) {
+        contentModals.classList.add("hidden");
+      }
+    });
+  }
+});
 
 

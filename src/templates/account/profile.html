@@ -75,7 +75,7 @@
                     </div>
                   </div>
             </a>
-            <a href="#">
+            <a href="{% url 'account:edit_password' %}">
                 <div class="bg-blue-950 text-white rounded-md p-2">
                     <div class="flex justify-between">
                       <span>تغییر رمز عبور</span>
@@ -85,22 +85,32 @@
                     </div>
                   </div>
             </a>
+            <a href="{% url 'account:logout' %}">
+                <div class="bg-blue-950 text-white rounded-md p-2">
+                    <div class="flex justify-between">
+                      <span>logout</span>
+                    </div>
+                    <div class="mt-1 text-[13px]">
+                     برای تlogout کلیک کنید
+                    </div>
+                  </div>
+            </a>
         </div>
        </section>
 </main>
 
 <div class="fixed-element bg-menu bg-cover">
         <div class="flex justify-between items-center w-full">
-            <a href="#" class="flex items-center justify-center w-8 h-8">
-                <img src="{% static 'public/' %}./images/Profile.png" alt="">
-            </a>
+        <a href="{% url 'account:profile_details' %}" class="flex items-center justify-center w-8 h-8">
+            <img src="{% static 'public/images/Profile.png' %}" alt="">
+        </a>
             <a href="#" class="flex items-center justify-center w-8 h-8">
                 <img src="{% static 'public/images/sound.png' %}" alt="">
             </a>
-            <a href="#" class="flex items-center justify-center w-10 h-10 rounded-full bg-yellow-600 mb-[30px]">
+            <a href="/" class="flex items-center justify-center w-10 h-10 rounded-full bg-yellow-600 mb-[30px]">
                 <img src="{% static 'public/images/Home.png' %}" alt="">
             </a>
-            <a href="#" class="flex items-center justify-center w-8 h-8">
+            <a href="{% url 'course:course_list' %}" class="flex items-center justify-center w-8 h-8">
                 <img src="{% static 'public/images/cart.png' %}" alt="">
             </a>
             <a href="#" class="flex items-center justify-center w-8 h-8">
