@@ -9,7 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
     path('bankgateways/', az_bank_gateways_urls()),
-    path('account/', include('apps.account.urls', namespace='account')),
+    path('accounts/', include('apps.account.urls', namespace='account')),
     path('', include('apps.public.urls', namespace='public')),
     path('customers/', include('apps.customers.urls', namespace='customers')),
     path('subscription/', include('apps.subscription.urls', namespace='subscription')),

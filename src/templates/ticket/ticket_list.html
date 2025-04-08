@@ -20,15 +20,19 @@
                             <div class="mb-4">
                                 <label for="type" class="block text-sm text-gray-700 mb-2">نوع تیکت</label>
                                 <select name="type" id="type" class="w-full p-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500">
-                                    {% for value, label in form.type.field.choices %}
+                                    {% for value, label in form.fields.type.choices %}
                                         <option value="{{ value }}">{{ label }}</option>
                                     {% endfor %}
                                 </select>
+
+                                <textarea name="text" class="input-modal w-full p-2 mt-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500" cols="30" rows="7" placeholder="موضوع"></textarea>
+
+                                <div class="upload-file mt-4">
+                                    <label for="file" class="block text-sm text-gray-700 mb-2">فایل پیوست</label>
+                                    <input type="file" id="file" name="file" class="w-full p-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                                </div>
+
                             </div>
-                        </div>
-                        <div class="upload-file mt-4">
-                            <label for="file" class="block text-sm text-gray-700 mb-2">فایل پیوست</label>
-                            <input type="file" id="file" name="file" class="w-full p-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500">
                         </div>
                         <div class="btns-modal flex justify-between mt-6 gap-2">
                             <div class="btn-modal w-1/2">

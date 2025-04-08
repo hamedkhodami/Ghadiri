@@ -28,8 +28,8 @@ class TicketCreateView(LoginRequiredMixin, FormView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['form'] = forms.CreateTicketForm(initial={'user':self.request.user})
         context['tickets'] = Ticket.objects.filter(is_active=True, user=self.request.user)
+        context['form'] = self.get_form()
         return context
 
     def get_form(self, form_class=None):
