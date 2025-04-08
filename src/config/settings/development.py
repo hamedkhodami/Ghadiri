@@ -29,7 +29,7 @@ AZ_IRANIAN_BANK_GATEWAYS = {
            'SANDBOX': 1,  # 0 disable, 1 active
        },
        'ZARINPAL': {
-           'MERCHANT_CODE': 'ad61f70d-3862-4f1b-a83d-62c61b1be8d7',
+           'MERCHANT_CODE': '<YOUR MERCHANT CODE>',
            'SANDBOX': 1,  # 0 disable, 1 active
        },
    },

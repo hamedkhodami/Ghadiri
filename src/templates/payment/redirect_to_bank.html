@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>در حال انتقال به درگاه پرداخت...</title>
+</head>
+<body>
+    <p>در حال انتقال به درگاه پرداخت، لطفاً منتظر بمانید...</p>
+    <form id="redirectForm" method="post" action="{{ action }}">
+        {% for key, value in inputs.items %}
+            <input type="hidden" name="{{ key }}" value="{{ value }}">
+        {% endfor %}
+    </form>
+
+    <script>
+        document.getElementById('redirectForm').submit();
+    </script>
+</body>
+</html>

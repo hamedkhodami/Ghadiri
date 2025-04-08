@@ -19,6 +19,11 @@ class TicketListView(LoginRequiredMixin, ListView):
         queryset = Ticket.objects.filter(is_active=True, user=self.request.user)
         return queryset
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = forms.CreateTicketForm(initial={'user': self.request.user})
+        return context
+
 
 # Render TicketCreate view
 class TicketCreateView(LoginRequiredMixin, FormView):
@@ -33,14 +38,14 @@ class TicketCreateView(LoginRequiredMixin, FormView):
         return context
 
     def get_form(self, form_class=None):
-        data = self.request.POST.copy()
-        data.update({'user': self.request.user.id})
-        form_class = forms.CreateTicketForm(data=data, files=self.request.FILES)
-
-        return form_class
+        if self.request.method == 'POST':
+            data = self.request.POST.copy()
+            data.update({'user': self.request.user.id})
+            return forms.CreateTicketForm(data=data, files=self.request.FILES)
+        else:
+            return forms.CreateTicketForm(initial={'user': self.request.user})
 
     def form_valid(self, form):
-        print("form valid :" ,form.cleaned_data)
         form.save()
         messages.success(self.request, _('Ticket sent successfully'))
         return super().form_valid(form)

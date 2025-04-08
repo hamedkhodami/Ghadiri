@@ -41,8 +41,13 @@
                     <p class="text-gray-600">{{ course.type }}</p>
                   </div>
                 </div>
-
-                <button class="w-full py-2 px-4 bg-blue-600 text-white rounded-lg">ثبت نام در دوره</button>
+                <form method="post" action="{% url 'course:purchase_course' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="pk" value="{{ course.pk }}">
+                    <button type="submit" class="w-full py-2 px-4 bg-blue-600 text-white rounded-lg">
+                        ثبت نام در دوره
+                    </button>
+                </form>
               </div>
 
               <div class="md:col-span-2">
@@ -64,7 +69,6 @@
                                   هزار تومان {{ course.selling_price }}
                                 {% endif %}
                             </span>
-                            <button class="bg-blue-950 py-2 px-3 rounded-md text-white">مشاده دوره</button>
                         </div>
                     </div>
                 </div>

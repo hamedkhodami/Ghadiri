@@ -18,12 +18,19 @@
                                 <input type="text" name="title" class="w-full p-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="عنوان تیکت">
                             </div>
                             <div class="mb-4">
-                                <label for="type" class="block text-sm text-gray-700 mb-2">نوع تیکت</label>
-                                <select name="type" id="type" class="w-full p-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500">
-                                    {% for value, label in form.fields.type.choices %}
-                                        <option value="{{ value }}">{{ label }}</option>
-                                    {% endfor %}
-                                </select>
+                                {% if form %}
+                                    <label for="type" class="block text-sm text-gray-700 mb-2">نوع تیکت</label>
+                                    <select name="type" id="type" class="w-full p-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                                        {% for value, label in form.fields.type.choices %}
+                                            <option value="{{ value }}" {% if form.data.type == value|stringformat:"s" or form.initial.type == value %}selected{% endif %}>
+                                                {{ label }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                {% else %}
+                                    <!-- در صورت نداشتن فرم، می‌توان یک پیام یا فرم خالی نمایش داد -->
+                                    <p>فرمی جهت ایجاد تیکت موجود نیست.</p>
+                                {% endif %}
 
                                 <textarea name="text" class="input-modal w-full p-2 mt-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500" cols="30" rows="7" placeholder="موضوع"></textarea>
 
