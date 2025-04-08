@@ -164,17 +164,17 @@ class CustomPasswordChangeForm(PasswordChangeForm):
         super(CustomPasswordChangeForm, self).__init__(*args, **kwargs)
 
         self.fields['old_password'].widget.attrs.update({
-            'placeholder': 'رمز عبور فعلی',
+            'placeholder': _('Current Password'),
             'class': 'bg-transparent text-white w-full focus:outline-none',
             'autocomplete': 'current-password',
         })
         self.fields['new_password1'].widget.attrs.update({
-            'placeholder': 'رمز عبور جدید',
+            'placeholder': _('New Password'),
             'class': 'bg-transparent text-white w-full focus:outline-none',
             'autocomplete': 'new-password',
         })
         self.fields['new_password2'].widget.attrs.update({
-            'placeholder': 'تکرار رمز عبور جدید',
+            'placeholder': _('Repeat New Password'),
             'class': 'bg-transparent text-white w-full focus:outline-none',
             'autocomplete': 'new-password',
         })

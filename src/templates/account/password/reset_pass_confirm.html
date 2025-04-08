@@ -1,7 +1,7 @@
 {% extends "base/base_sign.html" %}
 {% load static %}
 
-{% block title %}تأیید کد{% endblock %}
+{% block title %}تایید بازنشانی رمز عبور{% endblock %}
 
 {% block body %}
      <!-- svg icons -->
@@ -38,7 +38,7 @@
       {% csrf_token %}
 
       <div class="mb-4">
-        <div class="text-center text-red-500 font-bold">
+        <div class="text-center text-red-500 font-bold custom-text-red">
           {{ form.code.errors.0 }}
         </div>
         <div class="flex items-center bg-gray-200 bg-opacity-50 rounded-full p-2">
