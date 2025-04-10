@@ -1,152 +1,54 @@
-{% extends "base/base_layout.html" %}
+{% extends "base/base_sign.html" %}
 {% load static %}
 
 {% block title %}
-صفحه اصلی
+تأیید شماره
 {% endblock %}
 
 {% block body %}
+<div class="w-full md:w-[500px] mx-auto flex justify-center items-center min-h-screen bg-home-desktop bg-cover bg-no-repeat">
+  <div class="w-full max-w-md p-8">
 
-<main class="content_div bg-gray-100" style="padding-bottom:70px;">
-    <section class="p-3">
-        <div class="content-modal modal-ticket fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50 p-6">
-            <div class="inner-modal bg-white p-6 rounded-lg shadow-xl w-full sm:w-96">
-                <form class="px-4 pt-2">
-                    <div class="py-2">
-                        <div class="modal-title mb-4">
-                            <input type="text" name="ticketTitle" class="w-full p-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="عنوان تیکت">
-                        </div>
-                        <textarea name="modal" class="input-modal w-full p-2 mt-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500" cols="30" rows="7" placeholder="موضوع"></textarea>
-                    </div>
-
-                    <div class="upload-file mt-4">
-                        <label for="file" class="block text-sm text-gray-700 mb-2">فایل پیوست</label>
-                        <input type="file" id="file" name="file" class="w-full p-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500">
-                    </div>
-
-                    <div class="btns-modal flex justify-between mt-6 gap-2">
-                        <div class="btn-modal w-1/2">
-                            <span class="btn-send-modal w-full block text-center bg-yellow-500 text-white text-[13px] py-2 rounded-lg hover:bg-yellow-600 cursor-pointer">
-                                ارسال
-                            </span>
-                        </div>
-                        <div class="btn-modal close-modal-adamtaeid w-1/2">
-                            <span class="w-full block text-center bg-gray-300 text-gray-700 py-2 rounded-lg text-[13px] hover:bg-gray-400 cursor-pointer">
-                                لغو
-                            </span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <div class="flex justify-start p-3">
-        <button class="btn-modal-1 bg-yellow-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-yellow-600 focus:outline-none">
-            تیکت جدید
-        </button>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-6 p-3 mb:p-5">
-            <div class="item-ticket bg-gray-700 text-white p-4 rounded-lg shadow-md">
-                <div class="title-tiket text-yellow-400 mb-2">
-                    <span>دوره اول</span>
-                </div>
-                <div class="des-1 text-sm mb-2">
-                    موضوع 1
-                </div>
-                <div class="des-2 bg-gray-600 p-2 rounded-md text-[13px]">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                    چاپ، و با استفاده از طراحان گرافیک است.
-                    ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                    چاپ، و با استفاده از طراحان گرافیک است.
-                    ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                    چاپ، و با استفاده از طراحان گرافیک است.
-                </div>
-            </div>
-            <div class="item-ticket bg-gray-700 text-white p-4 rounded-lg shadow-md">
-                <div class="title-tiket text-yellow-400 mb-2">
-                    <span>دوره اول</span>
-                </div>
-                <div class="des-1 text-sm mb-2">
-                    موضوع 1
-                </div>
-                <div class="des-2 bg-gray-600 p-2 rounded-md text-[13px]">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                    چاپ، و با استفاده از طراحان گرافیک است.
-                    ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                    چاپ، و با استفاده از طراحان گرافیک است.
-                    ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                    چاپ، و با استفاده از طراحان گرافیک است.
-                </div>
-            </div>
-            <div class="item-ticket bg-gray-700 text-white p-4 rounded-lg shadow-md">
-                <div class="title-tiket text-yellow-400 mb-2">
-                    <span>دوره اول</span>
-                </div>
-                <div class="des-1 text-sm mb-2">
-                    موضوع 1
-                </div>
-                <div class="des-2 bg-gray-600 p-2 rounded-md text-[13px]">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                    چاپ، و با استفاده از طراحان گرافیک است.
-                    ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                    چاپ، و با استفاده از طراحان گرافیک است.
-                    ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                    چاپ، و با استفاده از طراحان گرافیک است.
-                </div>
-            </div>
-            <div class="item-ticket bg-gray-700 text-white p-4 rounded-lg shadow-md">
-                <div class="title-tiket text-yellow-400 mb-2">
-                    <span>دوره اول</span>
-                </div>
-                <div class="des-1 text-sm mb-2">
-                    موضوع 1
-                </div>
-                <div class="des-2 bg-gray-600 p-2 rounded-md text-[13px]">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                    چاپ، و با استفاده از طراحان گرافیک است.
-                    ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                    چاپ، و با استفاده از طراحان گرافیک است.
-                    ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                    چاپ، و با استفاده از طراحان گرافیک است.
-                </div>
-            </div>
-            <div class="item-ticket bg-gray-700 text-white p-4 rounded-lg shadow-md">
-                <div class="title-tiket text-yellow-400 mb-2">
-                    <span>دوره اول</span>
-                </div>
-                <div class="des-1 text-sm mb-2">
-                    موضوع 1
-                </div>
-                <div class="des-2 bg-gray-600 p-2 rounded-md text-[13px]">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                    چاپ، و با استفاده از طراحان گرافیک است.
-                    ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                    چاپ، و با استفاده از طراحان گرافیک است.
-                    ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
-                    چاپ، و با استفاده از طراحان گرافیک است.
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
-
-<div class="fixed-element bg-menu bg-cover">
-    <div class="flex justify-between items-center w-full">
-    <a href="{% url 'account:profile_details' %}" class="flex items-center justify-center w-8 h-8">
-        <img src="{% static 'public/images/Profile.png' %}" alt="">
-    </a>
-        <a href="#" class="flex items-center justify-center w-8 h-8">
-            <img src="{% static 'public/images/sound.png' %}" alt="">
-        </a>
-        <a href="/" class="flex items-center justify-center w-10 h-10 rounded-full bg-yellow-600 mb-[30px]">
-            <img src="{% static 'public/images/Home.png' %}" alt="">
-        </a>
-        <a href="{% url 'course:course_list' %}" class="flex items-center justify-center w-8 h-8">
-            <img src="{% static 'public/images/cart.png' %}" alt="">
-        </a>
-        <a href="#" class="flex items-center justify-center w-8 h-8">
-            <img src="{% static 'public/images/Notification.png' %}" alt="">
-        </a>
+    <div class="flex justify-center p-5">
+      <img src="{% static 'public/images/logoghadiri.png' %}" alt="">
     </div>
+
+    <p class="mb-6 text-white text-lg text-center">
+      لطفاً کدی که به شماره شما ارسال شده را وارد کنید
+    </p>
+
+    <form method="post" action="#">
+      {% csrf_token %}
+
+      {% if form.non_field_errors %}
+        <div class="text-center custom-text-red font-bold mb-4">
+          {{ form.non_field_errors.0 }}
+        </div>
+      {% endif %}
+
+      <div class="mb-4">
+        <div id="code-error" class="font-bold text-center custom-text-red">
+          {{ form.code.errors.0 }}
+        </div>
+        <div class="flex items-center bg-gray-200 bg-opacity-50 rounded-full p-2">
+          <svg class="w-6 h-6 text-white">
+            <use xlink:href="#lock-closed"></use>
+          </svg>
+          {{ form.code }}
+        </div>
+      </div>
+
+      <div class="mb-6 flex justify-center">
+        <button type="submit" class="w-[80%] bg-[#FCA311] text-white font-bold py-2 px-4 rounded-full">تأیید</button>
+      </div>
+
+    </form>
+
+    <div class="text-center mt-4 text-white">
+      کد ارسال نشده؟
+      <a href="{% url 'account:get_phone_number' %}" class="text-[#FCA311] hover:underline font-bold">دوباره ارسال کن</a>
+    </div>
+
+  </div>
 </div>
 {% endblock %}

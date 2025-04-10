@@ -5,22 +5,22 @@ class NotificationUser:
 
     @classmethod
     def mobile_verification_code_handler(cls, notification, phone_number):
-        pattern = 'h63qzke49mrw4aq'
+        pattern = '6yk1gp8ytmyk7ia'
         send_sms(phone_number, pattern, code=notification.kwargs['code'])
 
     @classmethod
     def subscription_end_warning(cls, notification, phone_number):
-        pattern = '4qkv8ckgt5332k6'
+        pattern = '6ykk1gp8ytmykk7ia'
         send_sms(phone_number, pattern, days=notification.kwargs['days'])
 
     @classmethod
     def new_ticket_created(cls, notification, phone_number):
-        pattern = '1tqgkyl63l31fr6'
+        pattern = 'l9ps8j8a19ysv9h'
         send_sms(phone_number, pattern, user_name=notification.to_user.get_full_name())
 
     @classmethod
     def new_ticket_created_admin(cls, notification, phone_number):
-        pattern = 'r1ls00hm3euo09o'
+        pattern = '68dhge9j2geb5at'
         send_sms(phone_number, pattern, user_name=notification.to_user.get_full_name())
 
     @classmethod

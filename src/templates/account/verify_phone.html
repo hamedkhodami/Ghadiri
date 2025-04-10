@@ -7,7 +7,7 @@
 
 {% block body %}
      <!-- svg icons -->
-  <svg class="hidden">
+<svg class="hidden">
         <symbol id="phone" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
         </symbol>
@@ -26,39 +26,50 @@
 
         <!-- the end svg icons  -->
     </svg>
-  <div class="w-full md:w-[500px] mx-auto flex justify-center items-center min-h-screen bg-home-desktop bg-cover bg-no-repeat">
-    <div class="w-full max-w-md p-8">
-        <div class="flex justify-center p-5">
-            <img src="{% static 'public/images/logoghadiri.png' %}" alt="">
-        </div>
-        <p class="mb-6 text-white text-lg text-center">
-            لطفا شماره موبایل خود را وارد کنید تا کد تایید برای شما ارسال شود.
-        </p>
+<div class="w-full md:w-[500px] mx-auto flex justify-center items-center min-h-screen bg-home-desktop bg-cover bg-no-repeat">
+  <div class="w-full max-w-md p-8">
 
-      <form method="post" action="">
+    <div class="flex justify-center p-5">
+      <img src="{% static 'public/images/logoghadiri.png' %}" alt="">
+    </div>
+
+    <p class="mb-6 text-white text-lg text-center">
+      لطفاً کدی که به شماره شما ارسال شده را وارد کنید
+    </p>
+
+    <form method="post" action="#">
       {% csrf_token %}
 
+      {% if form.non_field_errors %}
+        <div class="text-center custom-text-red font-bold mb-4">
+          {{ form.non_field_errors.0 }}
+        </div>
+      {% endif %}
+
       <div class="mb-4">
-        <div class="text-center text-red-500 font-bold custom-text-red">
-          {{ form..errors.0 }}
+        <div id="code-error" class="font-bold text-center custom-text-red">
+          {{ form.code.errors.0 }}
         </div>
         <div class="flex items-center bg-gray-200 bg-opacity-50 rounded-full p-2">
           <svg class="w-6 h-6 text-white">
-            <use xlink:href="#phone"></use>
+            <use xlink:href="#lock-closed"></use>
           </svg>
-          {{ form. }}
+          {{ form.code }}
         </div>
       </div>
 
       <div class="mb-6 flex justify-center">
-        <button type="submit" class="w-[80%] bg-[#FCA311] text-white font-bold py-2 px-4 rounded-full">ارسال کد</button>
+        <button type="submit" class="w-[80%] bg-[#FCA311] text-white font-bold py-2 px-4 rounded-full">تأیید</button>
       </div>
+
     </form>
 
-        <div class="text-center">
-          <a href="{% url 'account:register' %}" class="text-white underline">بازگشت به صفحه ثبت نام</a>
-        </div>
+    <div class="text-center mt-4 text-white">
+      کد ارسال نشده؟
+      <a href="{% url 'account:get_phone_number' %}" class="text-[#FCA311] hover:underline font-bold">دوباره ارسال کن</a>
     </div>
+
+  </div>
 </div>
 
 {% endblock %}

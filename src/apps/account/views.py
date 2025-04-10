@@ -107,14 +107,16 @@ class VerifyPhoneNumberView(LogoutRequiredMixin, FormView):
     success_url = reverse_lazy('')
 
     def get_form_kwargs(self):
-        data = super().get_form_kwargs()
-        data['data'] = {
-            'code': self.request.POST.get('code'),
-            'verify_code': self.request.session.get('verify_code'),
-            'token': self.request.session.get('secret_token')
-        }
+        kwargs = super().get_form_kwargs()
 
-        return data
+        if self.request.method == 'POST':
+            kwargs['data'] = {
+                'code': self.request.POST.get('code'),
+                'verify_code': self.request.session.get('verify_code'),
+                'token': self.request.session.get('secret_token')
+            }
+
+        return kwargs
 
     def form_valid(self, form):
         user = form.cleaned_data.get('user')
@@ -165,14 +167,16 @@ class ResetPassConfirmView(LogoutRequiredMixin, FormView):
     success_url = reverse_lazy('account:reset_pass_complete')
 
     def get_form_kwargs(self):
-        data = super().get_form_kwargs()
-        data['data'] = {
-            'code': self.request.POST.get('code'),
-            'verify_code': self.request.session.get('verify_code'),
-            'token': self.request.session.get('secret_token')
-        }
+        kwargs = super().get_form_kwargs()
 
-        return data
+        if self.request.method == 'POST':
+            kwargs['data'] = {
+                'code': self.request.POST.get('code'),
+                'verify_code': self.request.session.get('verify_code'),
+                'token': self.request.session.get('secret_token')
+            }
+
+        return kwargs
 
     def form_valid(self, form):
         # Delete code from session
