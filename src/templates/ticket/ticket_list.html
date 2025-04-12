@@ -64,28 +64,19 @@
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-6 p-3 mb:p-5">
             {% for ticket in tickets %}
-            <div class="item-ticket bg-gray-700 text-white p-4 rounded-lg shadow-md">
-                <div class="title-tiket text-yellow-400 mb-2">
+            <a href="{% url 'ticket:ticket_details' ticket.pk %}">
+                <div class="item-ticket bg-gray-700 text-white p-4 rounded-lg shadow-md">
+                    <div class="title-tiket text-yellow-400 mb-2">
                     <span>{{ ticket.title }}</span>
+                    </div>
+                    <div class="des-1 text-sm mb-2">
+                        {{ ticket.get_type_label }}
+                    </div>
+                    <div class="des-2 bg-gray-600 p-2 rounded-md text-[13px]">
+                    <p class="text-gray-400 text-xs mt-1">{{ ticket.get_jalali_date }}</p>
+                    </div>
                 </div>
-                <div class="des-1 text-sm mb-2">
-                    {{ ticket.get_type_label }}
-                </div>
-                <div class="des-2 bg-gray-600 p-2 rounded-md text-[13px]">
-                    {% for message in ticket.get_messages %}
-                        <div class="message-item border-b border-gray-500 py-2">
-                            <p><strong>{{ message.user }}:</strong></p>
-                            <p>{{ message.text }}</p>
-                            {% if message.file %}
-                                <a href="{{ message.file.url }}" class="text-blue-400 underline">دانلود فایل</a>
-                            {% endif %}
-                            <p class="text-gray-400 text-xs mt-1">{{ message.get_created_date }}</p>
-                        </div>
-                    {% empty %}
-                        <p class="text-gray-400 italic">هیچ پیامی ثبت نشده.</p>
-                    {% endfor %}
-                </div>
-            </div>
+            </a>
             {% endfor %}
         </div>
     </section>

@@ -144,6 +144,8 @@ class ResetPassForm(forms.Form):
 # UpdateProfile form
 class UpdateProfileForm(forms.ModelForm):
     phone_number = forms.CharField(max_length=11, required=True, widget=forms.TextInput)
+    first_name = forms.CharField(max_length=20, required=True, widget=forms.TextInput)
+    last_name = forms.CharField(max_length=20, required=True, widget=forms.TextInput)
 
     class Meta:
         model = UserProfile
@@ -154,6 +156,8 @@ class UpdateProfileForm(forms.ModelForm):
         user = profile.user
 
         user.phone_number = self.cleaned_data.get('phone_number')
+        user.first_name = self.cleaned_data.get('first_name')
+        user.last_name = self.cleaned_data.get('last_name')
         if commit:
             user.save()
 

@@ -232,7 +232,9 @@ class UserProfileView(LoginRequiredMixin, TemplateView):
 
     def get(self, request):
         form = forms.UpdateProfileForm(instance=request.user.profile, initial={
-            'phone_number' : request.user.phone_number
+            'phone_number' : request.user.phone_number,
+            'first_name' : request.user.first_name,
+            'last_name' : request.user.last_name
         })
         return render(request, self.template_name, {'form':form})
 

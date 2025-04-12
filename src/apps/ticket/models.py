@@ -5,6 +5,8 @@ from django.db import models
 
 from .enums import TicketTypesEnum, TicketStatusEnum
 from .utils import ticket_file_src
+from apps.core.utils import get_jalali_date
+
 User = get_user_model()
 
 
@@ -42,6 +44,9 @@ class Ticket(models.Model):
     def get_absolute_url(self):
         return reverse('ticket:ticket_details', args=[self.pk])
 
+    def get_jalali_date(self):
+        return get_jalali_date(self.created_at)
+
 
 # Ticket Messages model
 class Messages(models.Model):
@@ -62,3 +67,7 @@ class Messages(models.Model):
 
     def get_created_date(self):
         return self.created_at.strftime('%Y-%m-%d')
+
+
+    def get_jalali_date(self):
+        return get_jalali_date(self.created_at)

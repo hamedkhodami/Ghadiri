@@ -26,6 +26,16 @@
        <section class="user-information p-2">
         <div class="grid grid-cols md:grid-cols-2 gap-4 mt-5">
             <div class="flex items-center justify-start md:justify-around gap-1 ">
+                <span class="text-[13px] md:text-sm w-[20%]">نام:</span>
+                <input class=" w-[80%] bg-slate-200 p-1 rounded-md outline-none"
+                       type="text" name="first_name" value="{{ form.first_name.value|default_if_none:'' }}">
+            </div>
+            <div class="flex items-center justify-start md:justify-around gap-1 ">
+                <span class="text-[13px] md:text-sm w-[20%]">نام خانوادگی:</span>
+                <input class=" w-[80%] bg-slate-200 p-1 rounded-md outline-none"
+                       type="text" name="last_name" value="{{ form.last_name.value|default_if_none:'' }}">
+            </div>
+            <div class="flex items-center justify-start md:justify-around gap-1 ">
                 <span class="text-[13px] md:text-sm w-[20%]">شماره تلفن:</span>
                 <input class=" w-[80%] bg-slate-200 p-1 rounded-md outline-none"
                        type="text" name="phone_number" value="{{ form.phone_number.value|default_if_none:'' }}">

@@ -3,7 +3,7 @@ from django.contrib.auth import settings
 from django.contrib import messages
 from django.utils import timezone
 from datetime import datetime
-
+import jdatetime
 from threading import Thread
 from os.path import splitext
 from ippanel import Client
@@ -121,3 +121,10 @@ def remove_first_char(string):
         return string[1:] if string[0] == '0' else string
     except (TypeError, IndexError):
         return string
+
+
+# Jalali date
+def get_jalali_date(date):
+    if date:
+        return jdatetime.datetime.fromgregorian(datetime=date).strftime("%Y/%m/%d")
+    return None

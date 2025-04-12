@@ -10,7 +10,7 @@
 <main class="content_div relative bg-gray-100">
     <section class=" p-3 md:p-6">
       <div class="title flex justify-center">
-        <h2 class="text-indigo-900 text-lg"> دوره man</h2>
+        <h2 class="text-indigo-900 text-lg">دوره های آموزشی {{ request.user.get_full_name|default:request.user.phone_number }}</h2>
       </div>
       <div class="mx-auto py-3">
         <div class="grid grid-cols-2 gap-4 mt-5">
