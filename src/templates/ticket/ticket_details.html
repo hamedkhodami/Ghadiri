@@ -13,7 +13,6 @@
   <div class="w-full max-w-2xl h-[70vh] flex flex-col bg-white rounded-lg shadow-lg overflow-hidden">
     <!-- پیام‌ها -->
     <div id="messages" class="flex-1 overflow-y-auto p-4 space-y-4">
-      {% include "base/headers.html" %}
       {% for message in ticket.get_messages %}
         {% if message.user == request.user %}
           <div class="self-end bg-[#f0f0f0] text-black px-4 py-2 rounded-lg max-w-[100%]">
@@ -51,7 +50,6 @@
     </div>
   </div>
  </main>
- {% include "base/footer.html" %}
   <script>
     const input = document.getElementById("inputMessage");
     const messagesContainer = document.getElementById("messages");
@@ -78,4 +76,5 @@
     });
   </script>
 </body>
+{% include "base/footers.html" %}
 </html>
