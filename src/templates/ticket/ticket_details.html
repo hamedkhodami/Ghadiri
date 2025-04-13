@@ -7,11 +7,10 @@
   <link rel="stylesheet" href="{% static 'public/styles/app.css' %}">
 </head>
 
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-
-  <div class="w-full max-w-2xl h-[100vh] flex flex-col bg-white rounded-lg shadow-lg overflow-hidden">
-
-
+<body class="bg-white content_div relative">
+  {% include "base/headers.html" %}
+  <main class="content_div bg-gray-100">
+  <div class="w-full max-w-2xl h-[70vh] flex flex-col bg-white rounded-lg shadow-lg overflow-hidden">
     <!-- پیام‌ها -->
     <div id="messages" class="flex-1 overflow-y-auto p-4 space-y-4">
       {% include "base/headers.html" %}
@@ -50,10 +49,9 @@
         </button>
       </form>
     </div>
-    {% include "base/footers.html" %}
-
   </div>
-
+ </main>
+ {% include "base/footer.html" %}
   <script>
     const input = document.getElementById("inputMessage");
     const messagesContainer = document.getElementById("messages");
