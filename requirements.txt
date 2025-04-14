@@ -18,13 +18,14 @@ gunicorn==21.2.0
 idna==3.6
 ippanel==2.0.7
 isodate==0.6.1
+jalali_core==1.0.0
+jdatetime==5.2.0
 jinxed==1.2.1
 lxml==5.1.0
 packaging==23.2
 persian-tools==0.0.11
 pillow==10.2.0
 platformdirs==4.2.0
-psycopg2==2.9.9
 psycopg2-binary==2.9.10
 pycryptodome==3.20.0
 python-dateutil==2.8.2

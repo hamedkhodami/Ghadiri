@@ -3,7 +3,39 @@ version: '3.9'
 services:
   web:
     build: .
-    ports:
-      - '8000:8000'
+    command: python src/manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
+      - ./staticfiles:/var/www/static
+      - ./src/db.sqlite3:/app/src/db.sqlite3
+    ports:
+      - '8000:8000'
+    depends_on:
+      - redis
+    environment:
+      - ENABLE_WHITENOISE=1
+      - STATIC_ROOT=/var/www/static
+      - STATICFILES_DIRS=static/assets
+      - MEDIA_ROOT=static/media
+      - SQLITE_PATH=/app/src/db.sqlite3
+
+  djangoq:
+    build: .
+    command: python src/manage.py qcluster
+    volumes:
+      - .:/app
+      - ./staticfiles:/var/www/static
+      - ./src/db.sqlite3:/app/src/db.sqlite3
+    depends_on:
+      - redis
+    environment:
+      - ENABLE_WHITENOISE=1
+      - STATIC_ROOT=/var/www/static
+      - STATICFILES_DIRS=static/assets
+      - MEDIA_ROOT=static/media
+      - SQLITE_PATH=/app/src/db.sqlite3
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
