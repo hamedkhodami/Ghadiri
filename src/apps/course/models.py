@@ -41,6 +41,11 @@ class Instructor(BaseModel):
     def get_courses_count(self):
         return self.courses.all().count() or 0
 
+    def get_image(self):
+        if self.image:
+            return self.image.url
+        return '/static/assets/public/image/bazaryabi.png'
+
 class CourseCategory(BaseModel):
 
     name = models.CharField(_('Category'), max_length=150)

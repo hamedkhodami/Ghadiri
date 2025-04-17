@@ -26,7 +26,7 @@ AZ_IRANIAN_BANK_GATEWAYS = {
        'IDPAY': {
            'MERCHANT_CODE': '<YOUR MERCHANT CODE>',
            'METHOD': 'POST',  # GET or POST
-           'SANDBOX': 1,  # 0 disable, 1 active
+           'X-SANDBOX': 1,  # 0 disable, 1 active
        },
        'ZARINPAL': {
            'MERCHANT_CODE': '<YOUR MERCHANT CODE>',
