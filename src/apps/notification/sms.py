@@ -6,7 +6,7 @@ class NotificationUser:
     @classmethod
     def mobile_verification_code_handler(cls, notification, phone_number):
         pattern = '6yk1gp8ytmyk7ia'
-        send_sms(phone_number, pattern, code=notification.kwargs['code'])
+        send_sms(phone_number, pattern, **{'verification-code': notification.kwargs['code']})
 
     @classmethod
     def subscription_end_warning(cls, notification, phone_number):
@@ -16,12 +16,12 @@ class NotificationUser:
     @classmethod
     def new_ticket_created(cls, notification, phone_number):
         pattern = 'l9ps8j8a19ysv9h'
-        send_sms(phone_number, pattern, user_name=notification.to_user.get_full_name())
+        send_sms(phone_number, pattern, name=notification.to_user.get_full_name())
 
     @classmethod
     def new_ticket_created_admin(cls, notification, phone_number):
         pattern = '68dhge9j2geb5at'
-        send_sms(phone_number, pattern, user_name=notification.to_user.get_full_name())
+        send_sms(phone_number, pattern, name=notification.to_user.get_full_name())
 
     @classmethod
     def new_subscription_registered_admin(cls, notification, phone_number):
