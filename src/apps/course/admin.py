@@ -41,7 +41,7 @@ class SessionInline(admin.StackedInline):
 class EpisodeInline(admin.StackedInline):
     model = Episode
     extra = 0
-    fields = ['session', 'title', 'number', 'file_url']
+    fields = ['session', 'title', 'number','file' , 'file_url']
     autocomplete_fields = ['session']
 
 
@@ -68,7 +68,7 @@ class CourseAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {'fields': ('title', 'slug', 'category', 'short_des', 'instructor', 'type', 'description')}),
         (_('Price info'), {'fields': ('payment_type', 'price', 'discount', 'selling_price')}),
-        (_('Additional info'), {'fields': ('introduction_video_link', 'introduction_image', 'cover_image', 'duration', 'is_active')})
+        (_('Additional info'), {'fields': ('introduction_video', 'introduction_video_link', 'introduction_image', 'cover_image', 'duration', 'is_active')})
     )
 
     # Change formfield attributes(widget:size)

@@ -6,112 +6,131 @@
 {% endblock %}
 
 {% block body %}
-
-    <main class="content_div relative bg-gray-100">
-        <div class="container mx-auto">
-            <!-- Container -->
-            <div class="grid grid-cols-1">
-
-              <!-- Sidebar -->
-              <div class="bg-white p-6 rounded-lg shadow-md h-auto">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">{{ object.title }}</h2>
-
-                <div class="grid grid-cols-2 gap-4 mb-4">
-                  <!-- استاد -->
-                  <div class="bg-gray-200 p-4 rounded-md flex flex-col items-center justify-center">
+<main class="content_div relative bg-gray-100">
+    <div class="container mx-auto grid grid-cols-1">
+        <!-- اطلاعات دوره -->
+        <div class="bg-white p-6 rounded-lg shadow-md h-auto">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">{{ object.title }}</h2>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <div class="bg-gray-200 p-4 rounded-md flex flex-col items-center justify-center">
                     <h3 class="text-gray-800 font-semibold mb-2">نام استاد</h3>
                     <p class="text-gray-600">{{ object.instructor }}</p>
-                  </div>
-
-                  <!-- زمان دوره -->
-                  <div class="bg-gray-200 p-4 rounded-md flex flex-col items-center justify-center">
+                </div>
+                <div class="bg-gray-200 p-4 rounded-md flex flex-col items-center justify-center">
                     <h3 class="text-gray-800 font-semibold mb-2">زمان دوره</h3>
                     <p class="text-gray-600">{{ object.duration }}</p>
-                  </div>
-
-                  <!-- تاریخ شروع -->
-                  <div class="bg-gray-200 p-4 rounded-md flex flex-col items-center justify-center">
-                    <h3 class="text-gray-800 font-semibold mb-2">تاریخ شروع</h3>
-                    <p class="text-sm mt-2">{{ object.short_des }}</p>
-                  </div>
-
-                  <!-- سطح -->
-                  <div class="bg-gray-200 p-4 rounded-md flex flex-col items-center justify-center">
-                    <h3 class="text-gray-800 font-semibold mb-2">سطح</h3>
-                    <p class="text-gray-600">{{ course.type }}</p>
-                  </div>
                 </div>
+                <div class="bg-gray-200 p-4 rounded-md flex flex-col items-center justify-center">
+                    <h3 class="text-gray-800 font-semibold mb-2">معرفی خلاصه</h3>
+                    <p class="text-sm mt-2">{{ object.short_des }}</p>
+                </div>
+                <div class="bg-gray-200 p-4 rounded-md flex flex-col items-center justify-center">
+                    <h3 class="text-gray-800 font-semibold mb-2">تعداد قسمت ها</h3>
+                    <p class="text-gray-600">{{ course.get_episode_count }}</p>
+                </div>
+            </div>
+            {% if course.payment_type == 'free' or has_course %}
+                <!-- دوره رایگانه یا خریداری‌شده -->
+                <a href="#course-sections" class="w-full py-2 px-4 bg-blue-600 text-white rounded-lg">
+                    مشاهده دوره
+                </a>
+            {% else %}
+                <!-- دوره پولی و هنوز نخریده -->
                 <form method="post" action="{% url 'course:purchase_course' %}">
                     {% csrf_token %}
                     <input type="hidden" name="pk" value="{{ course.pk }}">
-                    <button type="submit" class="w-full py-2 px-4 bg-blue-600 text-white rounded-lg">
-                        ثبت نام در دوره
-                    </button>
+                    <button type="submit" class="w-full py-2 px-4 bg-blue-600 text-white rounded-lg">خرید دوره</button>
                 </form>
-              </div>
+            {% endif %}
+        </div>
 
-              <div>
-                <div class=" bg-white p-6 rounded-lg shadow-md mt-3">
-                    <div>
-                      <video class="w-full h-full rounded-md" controls>
-                        <source src="{{ course.introduction_video_link.url }}" type="video/mp4">
-                        مرورگر شما از نمایش ویدیو پشتیبانی نمی‌کند.
-                      </video>
-                    </div>
-                    <div class="mt-3">
-                        <h2 class="text-lg font-bold">{{ object.title }}</h2>
-                        <p>دسته بندی :  {{ object.category }}</p>
-                        <div class="flex justify-between items-center">
-                            <span>
-                                {% if course.selling_price == 0 %}
-                                  رایگان
-                                {% else %}
-                                  هزار تومان {{ course.selling_price }}
-                                {% endif %}
-                            </span>
-                        </div>
-                    </div>
+        <!-- پخش ویدیو -->
+        <div class="bg-white p-6 rounded-lg shadow-md mt-3">
+            <div>
+                <video id="courseVideoPlayer" class="w-full rounded-md" controls>
+                    <source src="{{ course.introduction_video.url }}" type="video/mp4">
+                    مرورگر شما از نمایش ویدیو پشتیبانی نمی‌کند.
+                </video>
+            </div>
+            <div class="mt-3">
+                <p>دسته بندی: {{ object.category }}</p>
+                <div class="flex justify-between items-center">
+                    <span>
+                        {% if course.selling_price == 0 %}
+                            رایگان
+                        {% else %}
+                            هزار تومان {{ course.selling_price }}
+                        {% endif %}
+                    </span>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-md mt-3">
-                    <h2 class="font-bold text-lg">توضیخات دوره</h2>
-                    <p class="text-justify">{{ course.description|safe }}</p>
-                </div>
+            </div>
+        </div>
 
-                <div class="p-1 md:p-6 mt-3">
-                    <h2 class="p-2 font-bold text-lg">سر فصل ای دوره</h2>
-                    <div class="accordion">
-                        {% for session in course.get_sessions %}
-                        <div class="border-b mt-2">
-                          <button class="accordion-button w-full text-left px-4 py-3 flex items-center justify-between text-white text-base bg-blue-950 rounded-lg">
+        <!-- توضیحات -->
+        <div class="bg-white p-6 rounded-lg shadow-md mt-3">
+            <h2 class="font-bold text-lg">توضیحات دوره</h2>
+            <p class="text-justify">{{ course.description|safe }}</p>
+        </div>
+
+        <!-- سرفصل‌ها و اپیزودها -->
+        <div id="course-sections" class="p-1 md:p-6 mt-3">
+            <h2 class="p-2 font-bold text-lg">سرفصل‌های دوره</h2>
+            <div class="accordion">
+                {% for session in course.get_sessions %}
+                    <div class="border-b mt-2">
+                        <button class="accordion-button w-full text-left px-4 py-3 flex items-center justify-between text-white text-base bg-blue-950 rounded-lg">
                             <span>{{ session.title }}</span>
                             <svg class="w-5 h-5 text-white">
                                 <use xlink:href="#chevron-down"></use>
                             </svg>
-                          </button>
-                          <div class="accordion-content hidden ">
+                        </button><div class="accordion-content hidden">
                             {% for episode in session.get_episodes %}
-                                <div class="flex justify-between items-center bg-slate-500 text-white rounded-md px-2 py-1 text-sm  mt-1">
-                                <span>{{ episode.title }}</span>
-                                <div class="flex items-center gap-1">
-                                    <a href="">
-                                        <svg class="w-8 h-8 bg-blue-600 p-1 rounded-sm">
-                                            <use xlink:href="#download"></use>
-                                        </svg>
-                                    </a>
-                                    <button class="bg-green-950 p-2 rounded-md text-[12px]">مشاهده ویدئو</button>
+                                <div class="flex justify-between items-center bg-slate-500 text-white rounded-md px-2 py-1 text-sm mt-1">
+                                    <span>{{ episode.title }}</span>
+                                    <div class="flex items-center gap-1">
+                                        {% if has_course %}
+                                            <a href="#" onclick="changeVideo('{{ episode.video_link.url }}'); return false;" class="bg-green-950 p-2 rounded-md text-[12px]">مشاهده ویدئو</a>
+                                            <a href="{{ episode.video_link.url }}">
+                                                <svg class="w-8 h-8 bg-blue-600 p-1 rounded-sm">
+                                                    <use xlink:href="#download"></use>
+                                                </svg>
+                                            </a>
+                                        {% else %}
+                                            <svg class="w-8 h-8 bg-gray-500 p-1 rounded-sm opacity-50 cursor-not-allowed">
+                                                <use xlink:href="#lock"></use>
+                                            </svg>
+                                            <button class="bg-gray-700 p-2 rounded-md text-[12px] cursor-not-allowed opacity-60">قفل شده</button>
+                                        {% endif %}
+                                    </div>
                                 </div>
-                            </div>
                             {% endfor %}
-                          </div>
                         </div>
-                        {% endfor %}
                     </div>
-                </div>
-              </div>
+                {% endfor %}
             </div>
         </div>
-    </main>
+    </div>
+</main>
 
+<!-- جاوااسکریپت برای تغییر ویدیو -->
+<script>
+function changeVideo(videoUrl) {
+    const videoPlayer = document.getElementById("courseVideoPlayer");
+    const source = videoPlayer.querySelector("source");
+    source.src = videoUrl;
+    videoPlayer.load();
+    videoPlayer.play();
+}
+</script>
 
-
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});
+</script>
 {% endblock %}
